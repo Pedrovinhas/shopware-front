@@ -19,6 +19,11 @@ export default {
         type: 'inline-radio',
       },
     },
+    children: {
+      table: {
+        disable: true,
+    }
+  }
   },
 } as Meta<BannersProps>
 

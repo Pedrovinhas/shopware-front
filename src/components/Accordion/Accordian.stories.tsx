@@ -10,7 +10,11 @@ export default {
     children: 'Conteúdo do Accordian',
   },
   argTypes: {
-    
+    children: {
+        table: {
+          disable: true,
+      }
+    }
   },
  
 } as Meta<AccordianProps>
