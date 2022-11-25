@@ -7,17 +7,17 @@ export default create({
   colorSecondary: '#ff8c4b',
 
   // UI
-  appBg: '#121212',
-  appContentBg: '#121212',
+  appBg: '#FFFFFF',
+  appContentBg: '#FFFFFF',
   appBorderColor: '#639599',
   appBorderRadius: 4,
 
   // Typography
-  fontBase: '"Open Sans", sans-serif',
+  fontBase: '"Inter", sans-serif',
   fontCode: 'monospace',
 
   // Text colors
-  textColor: '#FFFFFF',
+  textColor: '#121212',
   textInverseColor: 'rgba(255,255,255,0.9)',
 
   // Toolbar default and active colors

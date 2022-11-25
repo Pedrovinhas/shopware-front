@@ -27,7 +27,7 @@ export function ProductPage() {
                     <ChevronRightSmallIcon isFilled/>
                     <Text color="primary" size="medium" title="medium"
                         onClick={
-                            () => navigate('/categories')
+                            () => navigate('/category')
                     }>
                         Handbag
                     </Text>
