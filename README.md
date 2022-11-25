@@ -1,5 +1,5 @@
 <h1 align='center'>
-    <img  src='./src/assets/logo.svg'/>
+    <img width='300px' height='150px' src='./src/assets/logo.svg'/>
 </h1>
 
   <p align="center">
@@ -15,9 +15,9 @@
 
 
 
-##  Shopware Storybook
+##  Shopware Coral
 
-**Shopware** é uma aplicação ecommerce com documentação usando Storybook e também o desafio final do projeto de bolsas da Compass.uol
+**Shopware Coral** é uma aplicação ecommerce com documentação usando Storybook e também o desafio final do projeto de bolsas da Compass.uol
 
 ### ✒ **Layout**
 - Para mais informações sobre o Layout acesse o Storybook da aplicação.
