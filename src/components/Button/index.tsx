@@ -4,7 +4,7 @@ import { StyledButton } from "./styles"
 export interface ButtonProps {
     children: ReactNode;
     variant: 'primary' | 'secondary' | 'outline';
-    size: 'large' | 'medium' | 'small';
+    size: 'large' | 'medium' | 'intermediary' | 'small';
     withButton?: boolean | undefined;
     onClick?: () => void;
     disabled?: boolean;

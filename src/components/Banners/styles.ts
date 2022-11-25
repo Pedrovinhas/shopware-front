@@ -6,11 +6,13 @@ export const BannerContainer = styled.div`
     gap: 4.5rem;
     margin-left: 1.25rem;
     margin-top: 2.5rem;
+
+    
 `
 
 
  export const StyledBanner = styled.div<BannersProps>`
-    
+    cursor: pointer;
     ${(props) => props.size === 'small' && css`
         width: 9.75rem
         height: 6.25rem

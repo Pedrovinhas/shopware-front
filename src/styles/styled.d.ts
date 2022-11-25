@@ -21,6 +21,7 @@ declare module 'styled-components' {
         },
 
         fontWeights: {
+            strong: number;
             bold: number;
             big: number;
             medium: number;
@@ -33,11 +34,13 @@ declare module 'styled-components' {
             md: string;
             xl: string;
             xlg: string;
+            'xlg2': string;
             '2xlg': string;
             '2xl': string;
             '3xl': string;
             '4xl': string;
             '5xl': string;
+            'midxl': string;
         },
 
         font: {

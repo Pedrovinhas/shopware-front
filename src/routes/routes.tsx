@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CategoryPage } from "../pages/CategoryPage";
 import { Home } from "../pages/Home";
+import { PageNotFound } from "../pages/PageNotFound";
 import { ProductPage } from "../pages/ProductPage";
 
 export function Router() {
@@ -10,7 +11,7 @@ export function Router() {
                 <Route path='/' element={<Home/>} />
                 <Route path='/category' element={<CategoryPage/>}/>
                 <Route path='/product' element={<ProductPage/>} />
-                {/* <Route path='*' element={}/> */}
+                <Route path='*' element={<PageNotFound/>}/>
             </Routes>
         </BrowserRouter>
     )

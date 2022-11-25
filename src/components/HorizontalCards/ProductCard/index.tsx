@@ -14,6 +14,7 @@ export interface ProductCardProps extends
         productModel: string;
         productName: string;
         productValue: string;
+        onClick?: () => void;
     }
 
 
@@ -37,10 +38,10 @@ export interface CardImageProps {
     src: string;
 }
 
-export function ProductCard({ withRating, withDiscount, withButton, src, productModel, productName, productValue, withTrending }: ProductCardProps) {
+export function ProductCard({ onClick, withRating, withDiscount, withButton, src, productModel, productName, productValue, withTrending }: ProductCardProps) {
     return (
-        <CardContainer>
-            <CardImageContainer src={src}>
+        <CardContainer >
+            <CardImageContainer src={src} onClick={onClick}>
                 <Trending withTrending={withTrending}> 
                     Trending 
                 </Trending>

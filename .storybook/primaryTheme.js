@@ -31,7 +31,7 @@ export default create({
   inputTextColor: '#FFFFFF',
   inputBorderRadius: 4,
 
-  brandTitle: 'Shopware Storybook',
-  brandUrl: 'https://example.com',
+  brandTitle: '🛍 Shopware Storybook',
+  brandUrl: '🛍',
   brandImage: 'https://placehold.it/350x150',
 });

@@ -31,6 +31,8 @@ export const CardImageContainer = styled.div<CardImageProps>`
     display: flex;
     justify-content: flex-end;
 
+    cursor: pointer;
+
 `
 
 export const Trending = styled.span<TrendingProps>`

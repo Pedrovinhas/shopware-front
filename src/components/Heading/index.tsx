@@ -2,8 +2,8 @@ import { ElementType, ReactNode } from "react";
 import { StyledHeading } from "./styles";
 
 export interface HeadingProps {
-    size: 'ultralarge' | 'extralarge' | 'large' | 'medium' | 'small';
-    title: 'medium' | 'regular' | 'bold';
+    size: 'midlarge'| 'ultralarge' | 'extralarge' | 'large' | 'medium' | 'small';
+    title: 'medium' | 'regular' | 'bold' | 'strong';
     color: 'primary' | 'highEmphasis' | 'lowEmphasis' | 'bright' | 'brown' | 'dark';
     children: ReactNode;
     as?: ElementType;

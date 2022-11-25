@@ -2,9 +2,9 @@ import { ElementType, ReactNode } from "react";
 import { StyledText } from "./styles";
 
 export interface TextProps {
-    size: 'large' | 'medium' | 'small' | 'extralarge' | 'doublexlg';
+    size: 'large' | 'medium' | 'small' | 'extralarge' | 'doublexlg' | 'triplexlg';
     title: 'medium' | 'regular' | 'normal';
-    color: 'primary' | 'highEmphasis' | 'lowEmphasis' | 'brown' | 'bright' | 'lightText' | 'discount';
+    color: 'primary' | 'highEmphasis' | 'lowEmphasis' | 'brown' | 'bright' | 'lightText' | 'discount' | 'dark';
     decoration?: 'line-through' | 'normal'
     children: ReactNode;
     onClick?: () => void;

@@ -18,6 +18,7 @@ export const theme = {
     },
 
     fontWeights: {
+        strong: 800,
         bold: 700,
         big: 600,
         medium: 500,
@@ -30,10 +31,12 @@ export const theme = {
         md: '1rem', // 16px
         xl: '1.25rem', // 20px
         xlg: '1.5rem', // 24px;
+        'xlg2': '1.75rem', // 28px;
         '2xlg': '1.875rem', // 30px
         '2xl': '2.125rem', // 34px
         '3xl': '2.5rem', // 40px
         '4xl': '3.25rem', // 52px
+        'midxl': '3.75em', // 60px
         '5xl': '4.5rem' // 72px
 
     },

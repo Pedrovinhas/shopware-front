@@ -4,6 +4,9 @@ import { HeadingProps } from '.';
 
 export const StyledHeading = styled.h1<HeadingProps>`
 
+    ${(props) => props.size === 'midlarge' && css`
+        font-size: ${props => props.theme.fontSizes["midxl"]};
+    `} 
     ${(props) => props.size === 'ultralarge' && css`
         font-size: ${props => props.theme.fontSizes["5xl"]};
     `} 
@@ -57,6 +60,9 @@ export const StyledHeading = styled.h1<HeadingProps>`
     `} 
     ${(props) => props.title === 'bold' && css`
         font-weight: ${props => props.theme.fontWeights.bold};
+    `} 
+    ${(props) => props.title === 'strong' && css`
+        font-weight: ${props => props.theme.fontWeights.strong};
     `} 
 
 `

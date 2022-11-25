@@ -17,12 +17,11 @@ export function HandpickedCollections() {
       </Heading>
     
     <CollectionsContainer>
-        <ProductCollection src={Handbags} productCollection="Personal Care" />
-        <ProductCollection src={PersonalCare} productCollection="Handbags" />
+        <ProductCollection src={PersonalCare} productCollection="Personal Care" />
+        <ProductCollection src={Handbags} productCollection="Handbags" />
         <ProductCollection src={WristWatches} productCollection="Wrist Watches" />
         <ProductCollection src={Sunglasses} productCollection="Sun Glasses" />
     </CollectionsContainer>
-    
     
     </HandPickedContainer>
  

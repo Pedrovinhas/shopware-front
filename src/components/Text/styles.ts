@@ -14,6 +14,9 @@ export const StyledText = styled.p<TextProps>`
     ${(props) => props.size === 'doublexlg' && css`
         font-size: ${props => props.theme.fontSizes["2xlg"]};
     `} 
+    ${(props) => props.size === 'triplexlg' && css`
+        font-size: ${props => props.theme.fontSizes["xlg2"]};
+    `} 
 
     ${(props) => props.size === 'medium' && css`
         font-size: ${props => props.theme.fontSizes.base};
@@ -45,6 +48,10 @@ export const StyledText = styled.p<TextProps>`
 
     ${(props) => props.color === 'brown' && css`
         color: ${props => props.theme.colors.brown};
+    `} 
+
+    ${(props) => props.color === 'dark' && css`
+        color: ${props => props.theme.colors.dark};
     `} 
 
     ${(props) => props.color === 'lightText' && css`

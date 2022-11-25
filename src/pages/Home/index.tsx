@@ -9,24 +9,27 @@ import { ShopByBrand } from "../../components/ShopByBrand";
 import FacepacksBanner from '../../assets/Banner/facepacks.png'
 import SkincareBanner from '../../assets/Banner/skincare.png'
 import { Footer } from "../../components/Footer";
+import HeaderHero from '../../assets/Hero/header-hero.png'
+import { useNavigate } from "react-router-dom";
 
 
 export function Home() {
+  const navigate = useNavigate()
     return (
       <>
        
          <Header/>
-        <Hero hasBlackFriday={false}/>
+        <Hero hasBlackFriday={false} src={HeaderHero}/>
        <HorizontalCards/>
        <HandpickedCollections/>
        <ShopByBrand/>
        <HeroFooter/>
        <BannerContainer>
-         <Banners size='giant'>
-         <img src={SkincareBanner} alt="" />
+         <Banners size='giant' onClick={() => navigate('*')}>
+         <img src={SkincareBanner} alt="Skincare Banner" />
          </Banners>
-         <Banners size='giant'>
-           <img src={FacepacksBanner} alt="" />
+         <Banners size='giant' onClick={() => navigate('*')}>
+           <img src={FacepacksBanner} alt="Facepacks Banner" />
          </Banners>
        </BannerContainer>
        <Footer responsive="desktop"/>
