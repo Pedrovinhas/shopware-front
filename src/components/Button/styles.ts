@@ -68,7 +68,7 @@ export const StyledButton = styled.button<ButtonProps>`
     &:hover {
         color: ${props => props.theme.colors.primaryTint};
 
-        path {
+        .placeholder__icon {
         fill: ${props => props.theme.colors.primaryTint};
         }
     }

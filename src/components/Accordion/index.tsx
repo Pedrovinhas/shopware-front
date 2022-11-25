@@ -7,9 +7,10 @@ import { AccordionContent, StyledTrigger } from './styles';
 
 export interface AccordianProps {
   children?: ReactNode;
+  text?: ReactNode;
 }
 
-export function Accordian({children}: AccordianProps) {
+export function Accordian({children, text}: AccordianProps) {
 
     return (
         <Accordion.Root type='multiple' >
@@ -17,7 +18,7 @@ export function Accordian({children}: AccordianProps) {
           <Accordion.Header>
           <StyledTrigger>
             <Text size='medium' color='highEmphasis' title='regular'> 
-                Product Details
+                {text }
             </Text>
             <ChevronIcon isFilled={false}/>
             

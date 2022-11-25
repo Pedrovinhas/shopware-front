@@ -3,11 +3,12 @@ import { Button, ButtonProps } from '.'
 import { PlaceholderIcon } from '../Icons/PlaceholderIcon'
 
 export default {
-  title: 'Components/Button',
+  title: 'Elements/Button',
   component: Button,
   args: {
     children: 'Label',
     size: 'large',
+    variant: 'primary'
   },
   argTypes: {
     variant: {

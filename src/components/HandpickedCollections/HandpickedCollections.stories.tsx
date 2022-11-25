@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { HandpickedCollections, HandpickedCollectionsProps } from '.'
 
 export default {
-  title: 'Cards/Miscellaneous Elements/HandpickedCollections',
+  title: 'Cards/HandpickedCollections',
   component: HandpickedCollections,
   args: {
   },
@@ -12,4 +12,4 @@ export default {
  
 } as Meta<HandpickedCollectionsProps>
 
-export const Custom: StoryObj<HandpickedCollectionsProps> = {}
+export const Default: StoryObj<HandpickedCollectionsProps> = {}

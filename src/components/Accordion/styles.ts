@@ -20,7 +20,7 @@ export const StyledTrigger = styled(Accordion.AccordionTrigger)`
 export const AccordionContent = styled(Accordion.Content)`
 
     font-size: ${props => props.theme.fontSizes.base};
-    color: ${props => props.theme.colors.bright};
+    color: ${props => props.theme.colors.primary};
 
     padding: 20px;
     width: 360px;

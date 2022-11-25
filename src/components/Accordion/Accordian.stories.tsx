@@ -8,6 +8,7 @@ export default {
   component: Accordian,
   args: {
     children: 'Conteúdo do Accordian',
+    text: 'Texto do Accordian'
   },
   argTypes: {
     children: {

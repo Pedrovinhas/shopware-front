@@ -10,21 +10,15 @@ export default {
   },
   decorators: [withRouter],
   argTypes: {
-    responsive: {
-        options: ['mobile', 'desktop'],
-        control: {
-            type: 'inline-radio',
-          },
-    },
+    // responsive: {
+    //     options: ['mobile', 'desktop'],
+    //     control: {
+    //         type: 'inline-radio',
+    //       },
+    // },
   },
  
 } as Meta<FooterProps>
 
-export const DesktopFooter: StoryObj<FooterProps> = {}
+export const Footers: StoryObj<FooterProps> = {}
 
-
-export const MobileFooter: StoryObj<FooterProps> = {
-    args: {
-        responsive: 'mobile'
-    }
-}
