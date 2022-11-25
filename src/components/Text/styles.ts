@@ -4,6 +4,11 @@ import { TextProps } from '.';
 
 export const StyledText = styled.p<TextProps>`
 
+${(props) => props.cursor === 'pointer' && css`
+        cursor: pointer;
+    `} 
+
+
     ${(props) => props.size === 'large' && css`
         font-size: ${props => props.theme.fontSizes.md};
     `} 

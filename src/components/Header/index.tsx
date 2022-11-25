@@ -20,11 +20,11 @@ export function Header(props: HeaderProps) {
             <StyledNavLeft>
                 <img src={CoralLogo} alt="Logo do Site" />
                 <StyledNavDiv>
-                    <Text color="highEmphasis" title="medium" size="medium" as='a' onClick={() => navigate('/')}>Handbags</Text>
-                    <Text color="highEmphasis" title="medium" size="medium">Watches</Text>
-                    <Text color="highEmphasis" title="medium" size="medium">Skincare</Text>
-                    <Text color="highEmphasis" title="medium" size="medium">Jewellery</Text>
-                    <Text color="highEmphasis" title="medium" size="medium">Apparels</Text>
+                    <Text cursor="pointer" color="highEmphasis" title="medium" size="medium" as='a' onClick={() => navigate('/')}>Handbags</Text>
+                    <Text  cursor="pointer" color="highEmphasis" title="medium" size="medium" onClick={() => navigate('*')} >Watches</Text>
+                    <Text  cursor="pointer" color="highEmphasis" title="medium" size="medium" onClick={() => navigate('*')}>Skincare</Text>
+                    <Text  cursor="pointer" color="highEmphasis" title="medium" size="medium" onClick={() => navigate('*')}>Jewellery</Text>
+                    <Text  cursor="pointer" color="highEmphasis" title="medium" size="medium" onClick={() => navigate('*')}>Apparels</Text>
                 </StyledNavDiv>
             </StyledNavLeft>
             <StyledNavRight>
@@ -32,8 +32,8 @@ export function Header(props: HeaderProps) {
                 <StyledNavIconsDiv>
                     <div className='desktop-icons'>
                     <WishlistIcon isFilled={false}/>
-                    <HandbagsIconUnfilled isFilled={false}/>
                     <ProfileIcon isFilled/>
+                    <HandbagsIconUnfilled isFilled={false}/>
                     </div>
 
                     <div className='mobile-icons'>

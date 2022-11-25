@@ -39,6 +39,15 @@ export const StyledHeading = styled.h1<HeadingProps>`
         color: ${props => props.theme.colors.lowEmphasis};
     `} 
 
+    ${(props) => props.color === 'lightText' && css`
+        color: ${props => props.theme.colors.lightText};
+    `} 
+
+    ${(props) => props.color === 'vibrant' && css`
+        color: ${props => props.theme.colors.vibrant};
+    `} 
+
+
     ${(props) => props.color === 'bright' && css`
         color: ${props => props.theme.colors.bright};
     `} 
@@ -63,6 +72,10 @@ export const StyledHeading = styled.h1<HeadingProps>`
     `} 
     ${(props) => props.title === 'strong' && css`
         font-weight: ${props => props.theme.fontWeights.strong};
+    `} 
+
+    ${(props) => props.decoration === 'line-through' && css`
+        text-decoration: line-through;
     `} 
 
 `

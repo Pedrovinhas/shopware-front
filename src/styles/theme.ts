@@ -14,7 +14,8 @@ export const theme = {
         highEmphasis: '#171520',
         lowEmphasis: '#626262',
         brown: '#97451F',
-        discount: '#E21D1D'
+        discount: '#E21D1D',
+        vibrant: '#FF404B'
     },
 
     fontWeights: {
@@ -26,8 +27,8 @@ export const theme = {
     },
 
     fontSizes: {
-        sm: '0.75rem',
-        base: '0.875rem', // 14px
+        sm: '.75rem',
+        base: '.875rem', // 14px
         md: '1rem', // 16px
         xl: '1.25rem', // 20px
         xlg: '1.5rem', // 24px;
@@ -47,7 +48,7 @@ export const theme = {
 
     radii: {
         none: 0,
-        base: '0.5rem',
+        base: '.5rem',
         rounded: '9999px'
     },
 

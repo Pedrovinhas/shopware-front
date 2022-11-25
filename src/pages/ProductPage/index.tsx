@@ -43,7 +43,7 @@ export function ProductPage() {
                     </ProductContainer>
                     <ProductInfo 
                         productModel="asas" 
-                        productValue="ssdsd" 
+                        productValue="$54.69" 
                         productName="dsad"/>
                 </RowContainer>
                     <ProductDescription/>

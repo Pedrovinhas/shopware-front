@@ -72,5 +72,6 @@ export const ToShowContainer = styled.div`
 
 export const SortByContainer = styled.div`
     display: flex;
+    align-items: center;
     gap: .5rem;
 `

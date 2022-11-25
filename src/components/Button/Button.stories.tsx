@@ -33,7 +33,7 @@ export const WithPrimaryIcon: StoryObj<ButtonProps> = {
     children: [
       <>
       <PlaceholderIcon variant={'primary'}/>
-      Calor
+      Label
       <PlaceholderIcon variant={'primary'}/>
       </>
     ],
@@ -46,7 +46,7 @@ export const WithSecondaryIcon: StoryObj<ButtonProps> = {
     children: [
       <>
       <PlaceholderIcon variant={'secondary'}/>
-      Calor
+      Label
       <PlaceholderIcon variant={'secondary'}/>
       </>
     ],

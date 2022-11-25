@@ -18,6 +18,7 @@ declare module 'styled-components' {
             lowEmphasis: string;
             brown: string;
             discount: string;
+            vibrant: string;
         },
 
         fontWeights: {

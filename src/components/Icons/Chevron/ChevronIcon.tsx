@@ -5,6 +5,7 @@ export function ChevronIcon(props: IconProps) {
         <svg
         width={24}
         height={24}
+        cursor='pointer'
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         {...props}

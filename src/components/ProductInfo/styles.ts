@@ -24,6 +24,7 @@ export const Rating = styled.div`
 
 export const DivPrice = styled.div`
     display: flex;
+    align-items: center;
     gap: 1rem;
 `
 

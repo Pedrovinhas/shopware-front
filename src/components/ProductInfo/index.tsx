@@ -6,6 +6,8 @@ import { CupomCode, CupomContainer, DeliveryButtons, DeliveryDetails, DeliveryIn
 import { Text } from "../Text";
 import { ColumnContainer } from "../../pages/CategoryPage/styles";
 import { Separator } from "../Separator";
+import { WishlistIcon } from "../Icons/WishlistIcon";
+import { HandbagsWhiteIcon } from "../Icons/HandsbagWhiteIcon";
 
 export interface ProductInfoProps {
         productModel: string;
@@ -36,15 +38,15 @@ export function ProductInfo({  productModel, productName, productValue }: Produc
                 </Text>
             </DivRating>
             <DivPrice > 
-                <Text size='large' color="highEmphasis" title="medium">
+                <Heading size='large' color="highEmphasis" title="bold">
                     {productValue}
-                </Text>
-                    <Text color='lowEmphasis' title='normal' size='medium' decoration="line-through">
+                </Heading>
+                    <Heading color='lightText' title='regular' size='medium' decoration="line-through">
                         $78.66
-                    </Text>
-                    <Text size='large' color='discount' title="normal"  >
+                    </Heading>
+                    <Heading size='small' color='vibrant' title="regular"  >
                         $50% OFF
-                    </Text>
+                    </Heading>
     
                 </DivPrice>
         
@@ -91,9 +93,11 @@ export function ProductInfo({  productModel, productName, productValue }: Produc
             </CupomContainer>
             <DeliveryButtons>
                 <Button size="large" variant="primary" >
+                    <HandbagsWhiteIcon isFilled/>
                     Add to Bag
                 </Button>
                 <Button size="medium" variant="outline" >
+                    <WishlistIcon isFilled={false}/>
                 Add to Wishlist
                 </Button>
             </DeliveryButtons>

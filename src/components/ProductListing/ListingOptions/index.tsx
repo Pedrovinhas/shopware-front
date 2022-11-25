@@ -3,6 +3,7 @@ import { SortIcon } from "../../Icons/FilterIcons/SortIcon"
 import { Text } from "../../Text"
 import { TextField } from "../../FormControl"
 import { ListingContainer, PageLayout, SortByContainer, SortOptions, ToggleGroupItem, ToggleGroupRoot, ToShowContainer } from "./styles"
+import { SelectControl } from "../../FormControl/SelectControl"
 
 export function ListingOptions() {
     return (
@@ -37,6 +38,7 @@ export function ListingOptions() {
                 <Text color='highEmphasis' title="medium" size="large">
                     Sort By
                  </Text>
+                 <SelectControl text='Position'/>
                 </SortByContainer>
             </SortOptions>
         </ListingContainer>
