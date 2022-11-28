@@ -13,5 +13,9 @@ background-repeat: no-repeat;
 
 background-color: ${props => props.theme.colors.accent};
 
+    @media (max-width: 740px) {
+        width: 6.25rem;
+        height: 6.25rem;
+    }
 
 `

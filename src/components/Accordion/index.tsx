@@ -2,7 +2,7 @@ import * as Accordion from '@radix-ui/react-accordion';
 import { Text } from '../Text';
 import React, { ReactNode } from 'react';
 import { ChevronIcon } from '../Icons/Chevron/ChevronIcon';
-import { AccordionContent, StyledTrigger } from './styles';
+import { AccordionContent, AccordionRoot, StyledTrigger } from './styles';
 
 
 export interface AccordianProps {
@@ -13,7 +13,7 @@ export interface AccordianProps {
 export function Accordian({children, text}: AccordianProps) {
 
     return (
-        <Accordion.Root type='multiple' >
+        <AccordionRoot type='multiple' >
         <Accordion.Item value='1'>
           <Accordion.Header>
           <StyledTrigger>
@@ -28,7 +28,7 @@ export function Accordian({children, text}: AccordianProps) {
               {children}
             </AccordionContent>
         </Accordion.Item>
-      </Accordion.Root>
+      </AccordionRoot>
     )
 }
 

@@ -2,12 +2,31 @@ import styled, { css } from 'styled-components';
 import { BannersProps } from '.';
 
 export const BannerContainer = styled.div`
-    display: flex;
-    gap: 4.5rem;
     margin-left: 1.25rem;
     margin-top: 2.5rem;
 
-    
+    .desktop__banners {
+        display: flex;
+         gap: 4.5rem;
+    }
+
+    .mobile__banners {
+        display: none;
+    }
+
+     @media(max-width: 1120px) {
+        margin-top: 1rem;
+
+        .desktop__banners {
+            display: none;
+        }
+
+        .mobile__banners {
+        display: flex;
+        gap: 1rem;
+    }
+    }
+
 `
 
 
@@ -33,6 +52,6 @@ export const BannerContainer = styled.div`
         height: 14.25rem;
     `} 
 
-
+   
  
  `

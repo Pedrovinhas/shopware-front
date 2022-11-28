@@ -1,4 +1,5 @@
-import { ProductCollection } from "./ProductCollection";;
+import { ProductCollection } from "./ProductCollection";
+import { Text } from "../Text";
 import Handbags from '../../assets/Collection/handbags.png';
 import PersonalCare from '../../assets/Collection/personal-care.png';
 import WristWatches from '../../assets/Collection/wrist-watches.png';
@@ -14,9 +15,19 @@ export function HandpickedCollections() {
   return (
     <HandPickedContainer>
 
+    <span className="desktop__heading">
     <Heading color="bright" size="large" title="regular" >
         Handpicked Collections 
       </Heading>
+
+    </span>
+  
+    <span className="mobile__heading">
+    <Text color="bright" size="medium" title="medium" >
+        Handpicked Collections 
+      </Text>
+    </span>
+     
     
     <CollectionsContainer>
         <ProductCollection src={PersonalCare} productCollection="Personal Care" onClick={() => navigate('*')} />

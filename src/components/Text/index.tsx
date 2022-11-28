@@ -10,12 +10,13 @@ export interface TextProps {
     children: ReactNode;
     onClick?: () => void;
     as?: ElementType;
+    className?: string;
 }
 
 
-export function Text({ as, children, size, title, color, onClick, decoration, cursor }: TextProps) {
+export function Text({ as, children, size, title, color, onClick, decoration, cursor, className }: TextProps) {
     return (
-        <StyledText size={size} title={title} color={color} as={as} onClick={onClick} decoration={decoration} cursor={cursor}>
+        <StyledText size={size} title={title} color={color} as={as} onClick={onClick} decoration={decoration} cursor={cursor} className={className}>
             {children}
         </StyledText>
     )

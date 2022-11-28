@@ -16,6 +16,10 @@ export const StyledNavLeft = styled.nav`
 
      margin-left: 20px;
 
+     @media (max-width: 1140px) {
+        display: none;
+     }
+
 `
 
 export const StyledNavRight = styled.nav`
@@ -24,6 +28,20 @@ export const StyledNavRight = styled.nav`
      gap: 24px; 
 
      margin-right: 1.25rem;
+
+    
+
+`
+
+export const StyledNavMobile = styled.nav`
+    display: none;
+   
+     @media (max-width: 1140px) {
+        display: flex;
+        gap: 1.25rem;
+
+        margin-left: 20px;
+     }
 
 `
 

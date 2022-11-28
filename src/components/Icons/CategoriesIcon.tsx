@@ -12,7 +12,7 @@ export function CategoriesIcon(props: IconProps) {
   >
     <g
       clipPath="url(#clip0_188_293)"
-      stroke="#13101E"
+      stroke="#1B4B66"
       strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"

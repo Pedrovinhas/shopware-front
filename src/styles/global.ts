@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         font-size: 14px;
+        
     }
 
 

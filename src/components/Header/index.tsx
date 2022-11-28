@@ -1,6 +1,6 @@
 import { WishlistIcon } from "../Icons/WishlistIcon";
 import { HandbagsIconUnfilled } from "../Icons/HandbagsIconUnfilled";
-import { StyledHeader, StyledNavDiv, StyledNavIconsDiv, StyledNavLeft, StyledNavRight } from "./styles";
+import { StyledHeader, StyledNavDiv, StyledNavIconsDiv, StyledNavLeft, StyledNavMobile, StyledNavRight } from "./styles";
 import CoralLogo from '../../assets/logo.svg'
 import { SearchBar } from "../SearchBar";
 import { ProfileIcon } from "../Icons/ProfileIcon";
@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 import { SearchIcon } from "../Icons/SearchIcon";
 import { NotificationIcon } from "../Icons/HeaderIcons/NotificationIcon";
 import { AddHomeIcon } from "../Icons/HeaderIcons/AddHomeIcon";
+import { MenuMobileIcon } from "../Icons/MenuMobileIcon";
+import { Heading } from "../Heading";
 
 export interface HeaderProps {}
 
@@ -27,6 +29,14 @@ export function Header(props: HeaderProps) {
                     <Text  cursor="pointer" color="highEmphasis" title="medium" size="medium" onClick={() => navigate('*')}>Apparels</Text>
                 </StyledNavDiv>
             </StyledNavLeft>
+
+            <StyledNavMobile>
+                <MenuMobileIcon isFilled={false}/>
+                <Heading size='small' color='primary' title='regular'>
+                    Home
+                </Heading>
+            </StyledNavMobile>
+
             <StyledNavRight>
                 <SearchBar/>
                 <StyledNavIconsDiv>
@@ -37,9 +47,10 @@ export function Header(props: HeaderProps) {
                     </div>
 
                     <div className='mobile-icons'>
+                         <AddHomeIcon isFilled/>
                         <SearchIcon/>
                         <NotificationIcon isFilled/>
-                        <AddHomeIcon isFilled/>
+                       
                     </div>
                 </StyledNavIconsDiv>
             </StyledNavRight>

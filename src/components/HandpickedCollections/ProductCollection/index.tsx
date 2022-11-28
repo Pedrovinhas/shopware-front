@@ -14,8 +14,14 @@ export function ProductCollection({ src, productCollection, onClick }: ProductCo
     return (
         
             <CollectionImageContainer src={src} onClick={onClick}>
-                <span>
+                <span className='desktop__product'>
                 <Text size="extralarge" color="highEmphasis" title="regular"> 
+                    {productCollection}
+                </Text>
+                </span>
+
+                <span className="mobile__product">
+                <Text size="medium" color="highEmphasis" title="regular"> 
                     {productCollection}
                 </Text>
                 </span>

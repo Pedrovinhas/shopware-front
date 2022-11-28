@@ -1,4 +1,5 @@
 import { Heading } from "../Heading";
+import { Text } from "../Text";
 import { ProductCard } from "./ProductCard";
 import PinkBag from '../../assets/Product/pink-bag-small.svg'
 import Remus from '../../assets/Product/remus.png'
@@ -17,9 +18,20 @@ export function HorizontalCards() {
     return (
         <CardsDiv>
             <CardsNav>
-            <Heading color="highEmphasis" size="large" title="regular" >
+
+            <span className="desktop__heading">
+                <Heading color="highEmphasis" size="large" title="regular" >
                 New Arrivals
-            </Heading>
+                </Heading>
+            </span>
+         
+
+            <span className="mobile__heading">
+            <Text color="highEmphasis" size="medium" title="regular" >
+                  New Arrivals
+              </Text>
+            </span>
+          
             <Button size="small" variant="secondary" onClick={() => navigate('/category')}>
                 View All
                 <ChevronRightIcon isFilled={true}/>

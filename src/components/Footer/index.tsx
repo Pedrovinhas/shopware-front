@@ -1,15 +1,15 @@
 import {Accordian} from "../Accordion";
+import { BottomNavigation } from "../BottomNavigation";
+import { Separator } from "../Separator";
 import {AboutNav} from "./AboutNav";
 import {PolicyNav} from "./PolicyNav";
 import {ShopByCategoryNav} from "./ShopByCategoryNav";
 import {SocialsNav} from "./SocialsNav";
 import {FooterContainer, LeftFooter, RightFooter, StyledFooter} from "./styles";
 
-export interface FooterProps {
-    responsive?: 'mobile' | 'desktop';
-}
+export interface FooterProps {}
 
-export function Footer({responsive} : FooterProps) {
+export function Footer(props : FooterProps) {
     return (
         <StyledFooter>
             <div className='footer__desktop'>
@@ -30,10 +30,18 @@ export function Footer({responsive} : FooterProps) {
                 <Accordian text='More about Coral'>
                     <LeftFooter>
                         <ShopByCategoryNav/>
-                        <AboutNav/>
-                        <PolicyNav/>
+                        <div className="row-reverse">
+                            <AboutNav/>
+                            <PolicyNav/>
+                        </div>
+                        <div className="mobile-socials">
+                        <Separator color='primaryTint'/>
+                        <SocialsNav/>
+                        </div>
+                        
                     </LeftFooter>
                 </Accordian>
+               
             </div>
 
         </StyledFooter>

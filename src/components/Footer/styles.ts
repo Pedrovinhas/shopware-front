@@ -6,6 +6,7 @@ export const StyledFooter = styled.div`
         display: none;
     }
 
+    
 
     @media (max-width:1120px) {
         .footer__desktop {
@@ -14,8 +15,13 @@ export const StyledFooter = styled.div`
 
         .footer_mobile{
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
+
+            flex-direction: column;
+            width: 100%;
+          
+           padding-bottom: 58px;
         }
     }
 
@@ -34,11 +40,6 @@ export const FooterContainer = styled.footer<FooterProps>`
 
     padding-top:2rem;
 
-    ${(props) => props.responsive === 'mobile' && css`
-        
-        border: 1px solid red;
-
-    `}
 
 `
 
@@ -46,10 +47,49 @@ export const LeftFooter = styled.div`
     display: flex;
     gap: 4.25rem;
 
+    .row-reverse {
+        display: none;
+    }
+
+    .mobile-socials {
+        display: none;
+    }
+
+    
+    @media (max-width:1120px) {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100vw;
+        background-color: ${props => props.theme.colors.primary};
+
+        gap: 1.5rem;
+
+        .row-reverse {
+            display: flex;
+            flex-direction: column-reverse;
+
+            gap: 1.5rem;
+        }
+
+        .mobile-socials {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        
+    }
+
 `
 
 export const RightFooter = styled.div`
     margin-top: 2rem;
     margin-right: 3.875rem;
+
+    @media (max-width:1120px) {
+        margin-right: 0;
+    }
+
 
 `

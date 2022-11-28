@@ -1,10 +1,13 @@
 import { NavSeparator } from "./styles";
 
-export interface SeparatorProps {}
+export interface SeparatorProps {
+    color?: 'primaryTint'
 
-export function Separator() {
+}
+
+export function Separator({ color }: SeparatorProps) {
     return (
-        <NavSeparator>
+        <NavSeparator color={color}>
             
         </NavSeparator>
     )

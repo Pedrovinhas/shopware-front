@@ -1,10 +1,12 @@
 import { Heading } from "../../Heading";
 import { Text } from "../../Text";
-import { HeroContainer, HeroText } from "./styles";
+import { HeroContainerMobile, HeroContainerDesktop, HeroText } from "./styles";
+import HeroMobileImg from '../../../assets/Hero/makeup-hero-mobile.png'
 
 export function HeroFooter() {
     return (
-         <HeroContainer>
+        <>
+         <HeroContainerDesktop>
             <HeroText>
             <Text color="brown" size='doublexlg' title='normal'>
             LIFESTYLE
@@ -13,6 +15,11 @@ export function HeroFooter() {
             Makeup Accessories from Top Brands
             </Heading>
             </HeroText>
-         </HeroContainer>
+         </HeroContainerDesktop>
+         
+         <HeroContainerMobile>
+           <img src={HeroMobileImg} alt="Imagem Hero do Footer" />
+        </HeroContainerMobile>
+         </>
     )
 }

@@ -14,7 +14,7 @@ export const TextInputContainer = styled.div`
 
     padding-left: .5rem;
 
-    @media (max-width: 1120px) {
+    @media (max-width: 670px) {
         display: none;
     }
 `

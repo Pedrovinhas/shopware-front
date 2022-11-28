@@ -47,7 +47,10 @@
   - [X] Products
   - [X] 404
 
-
+- [X] To Do
+  - [X] Ajeitar tamanho do banner
+  - [X] Slider e Carroussel
+  - [X] Stepper
 
 ## 📚 Como rodar o Storybook
 

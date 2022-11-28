@@ -6,6 +6,10 @@ export const ToggleGroupRoot = styled(ToggleGroup.Root)`
     display: flex;
     gap: .5rem;
     flex-direction: column;
+
+    @media (max-width:1120px) {
+        flex-direction: row;
+    }
    
 `
 
@@ -23,6 +27,18 @@ export const ToggleGroupItem = styled(ToggleGroup.Item)`
     /* &[data-state='on'] {
         color: ${props => props.theme.colors.bright}
     } */
+
+    .separator {
+        display: none; 
+    }
+
+    @media (max-width:1120px) {
+        
+
+        .separator {
+            display: inline;
+        }
+    }
 `
 
 export const NavContainer = styled.div`
@@ -33,4 +49,9 @@ export const NavContainer = styled.div`
     
     gap:.75rem;
 
+    @media (max-width:1120px) {
+        margin-left: .9375rem;
+        
+       
+    }
 `

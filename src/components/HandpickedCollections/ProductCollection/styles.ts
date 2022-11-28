@@ -16,10 +16,31 @@ export const CollectionImageContainer = styled.div<CollectionImageProps>`
    
     align-items: flex-end;
 
-    span {
+    .desktop__product {
         margin-left: 1rem;
         margin-bottom: 1rem;
     }
+
+    .mobile__product {
+        display: none;
+    }
    
+    @media(max-width: 740px) {
+        width: 9.75rem;
+        height: 9.375rem;
+
+        background-size: 156px 150px;
+        background-position: center;
+
+        .desktop__product {
+            display: none;
+        }
+
+        .mobile__product {
+            display: flex;
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+    }
 
 `

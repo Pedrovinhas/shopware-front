@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Banners, BannersProps } from '.'
 import FunkImage from '../../assets/funk.svg'
-import SpringBanner from '../../assets/spring-banner-wide.png'
+import SpringBanner from '../../assets/Banner/spring-banner-wide.png'
 import WatchesBanner from '../../assets/watches-banner.png'
 import SkincareBanner from '../../assets/skincare-banner.svg'
 

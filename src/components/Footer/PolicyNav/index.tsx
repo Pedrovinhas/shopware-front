@@ -11,26 +11,31 @@ export function PolicyNav() {
             <Link to='*'>
                 <ToggleGroupItem value='1'>
                 Return Policy
+                <span className='separator'> | </span>
                 </ToggleGroupItem>
             </Link>
             <Link to='*'>
                 <ToggleGroupItem value='2'>
                 Terms of Use
+                <span className='separator'> | </span>
                 </ToggleGroupItem>
             </Link>
             <Link to='*'>
                 <ToggleGroupItem value='3'>
                 Sitemap
+                <span className='separator'> | </span>
                 </ToggleGroupItem>
             </Link>
             <Link to='*'>
                 <ToggleGroupItem value='4'>
                 Security
+                <span className='separator'> | </span>
                 </ToggleGroupItem>
             </Link>
             <Link to='*'>
                 <ToggleGroupItem value='5'>
                 Privacy
+                <span className='separator'> | </span>
                 </ToggleGroupItem>
             </Link>
 

@@ -33,4 +33,10 @@ export const NavContainer = styled.div`
     
     gap:.75rem;
 
+    @media (max-width:1120px) {
+        margin-left: .9375rem;
+        margin-top: 1.5rem;
+    }
+
+
 `

@@ -8,12 +8,20 @@ export const HeroDiv = styled.div<HeroImg>`
 
     background: url(${props => props.src});
     
+    
     margin-left: 1.25rem;
     margin-right: 1.25rem;
 
     height: 25rem;
 
     border-radius: 16px;
+
+    width: 100%;
+    max-width: 1240px;
+
+    @media (max-width: 640px) {
+        display: none;
+    }
 
 `
 

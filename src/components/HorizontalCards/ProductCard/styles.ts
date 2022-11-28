@@ -7,6 +7,12 @@ export const CardContainer = styled.div`
     gap: 8px;
     width: 17.875rem;
     height: 28rem;
+
+    @media (max-width: 1140px) {
+        width: 136px;
+        height: 252px;
+
+    }
 `
 
 export const CardText = styled.div`
@@ -32,6 +38,14 @@ export const CardImageContainer = styled.div<CardImageProps>`
     justify-content: flex-end;
 
     cursor: pointer;
+
+    @media (max-width: 1140px) {
+        width: 136px;
+        height: 138px;
+
+        background-size: 136px 138px;
+
+    }
 
 `
 

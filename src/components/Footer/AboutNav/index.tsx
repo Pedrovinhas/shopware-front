@@ -11,21 +11,25 @@ export function AboutNav() {
             <Link to='*'>
                 <ToggleGroupItem value='1'>
                 Contact Us
+                <span className='separator'> | </span>
                 </ToggleGroupItem>
             </Link>
             <Link to='*'>
                 <ToggleGroupItem value='2'>
                 About Us
+                <span className='separator'> | </span>
                 </ToggleGroupItem>
             </Link>
             <Link to='*'>
                 <ToggleGroupItem value='3'>
                 Careers
+                <span className='separator'> | </span>
                 </ToggleGroupItem>
             </Link>
             <Link to='*'>
                 <ToggleGroupItem value='4'>
                 Press
+             
                 </ToggleGroupItem>
             </Link>
         </ToggleGroupRoot> 
