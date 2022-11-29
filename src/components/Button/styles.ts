@@ -69,8 +69,6 @@ export const StyledButton = styled.button<ButtonProps>`
     color: ${props => props.theme.colors.primary};
     background: ${props => props.theme.colors.accent};
 
-  
-
     &:hover {
         color: ${props => props.theme.colors.primaryTint};
 

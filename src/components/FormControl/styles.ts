@@ -21,6 +21,8 @@ export const TextFieldBox = styled.button<FormControlProps>`
         height: 3.25rem;
 
         display: flex;
+
+      
         
     `} 
 
@@ -59,6 +61,10 @@ export const TextFieldInput = styled.input`
         color: ${props => props.theme.colors.lowEmphasis};
         font-size: ${props => props.theme.fontSizes.md};
         font-weight: ${props => props.theme.fontWeights.medium};
+
+        @media (max-width: 740px) {
+            font-size: 14px;
+        }
     }
 `
 

@@ -3,10 +3,16 @@ import styled from 'styled-components';
 import { TabProps } from '.';
 
 export const TabsRoot = styled(Tabs.Root)`
-    width: 100%;
+    display: none;
+
+    @media (max-width: 1140px) {
+        display: block;
+        width: 100%;
 
     position: fixed;
     bottom: 0;
+    }
+    
 `
 export const TabsList = styled(Tabs.List)`
     display: flex;

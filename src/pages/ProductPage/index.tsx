@@ -5,16 +5,19 @@ import {Header} from "../../components/Header";
 import {ChevronRightSmallIcon} from "../../components/Icons/Chevron/ChevronRightSmallIcon";
 import {ProductPics} from "../../components/ProductPics";
 import {Text} from "../../components/Text";
-import {Container, ProductContainer, RowContainer} from "./styles";
+import {Container, ProductContainer, ProductPageContainer, ProductPageMobile, RowContainer} from "./styles";
 import CoachBigPhoto from '../../assets/Product/coach-big.png'
 import CoachSmallPhoto from '../../assets/Product/coach-small.png'
 import { ProductInfo } from "../../components/ProductInfo";
 import { ProductDescription } from "../../components/ProductDescription";
+import { AppBar } from "../../components/AppBar";
+import { ChevronLeftIcon } from "../../components/Icons/Chevron/ChevronLeftIcon";
 
 export function ProductPage() {
     const navigate = useNavigate()
     return (
         <>
+        <ProductPageContainer>
             <Header/>
             <Container>
                 <Breadcrumbs>
@@ -48,7 +51,26 @@ export function ProductPage() {
                 </RowContainer>
                     <ProductDescription/>
             </Container>
+
+            <div className="footer__desktop">
             <Footer/>
+            </div>
+
+            
+           
+        </ProductPageContainer>
+
+        <ProductPageMobile>
+                <AppBar>
+                    <ChevronLeftIcon isFilled/>
+                </AppBar>
+                <ProductPics productBigImage={CoachBigPhoto}/>
+                <ProductInfo 
+                        productModel="asas" 
+                        productValue="$54.69" 
+                        productName="dsad"/>
+        </ProductPageMobile>
+
         </>
     )
 }

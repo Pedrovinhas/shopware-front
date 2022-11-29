@@ -1,11 +1,64 @@
 import styled from "styled-components";
 
+
+export const ProductColumn = styled.div`
+    margin-left: 1.25rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .mobile__accordions {
+         display: none;   
+        }
+
+    @media (max-width: 1140px) {
+        gap: 24px;
+
+        .mobile__separator {
+            display: none;
+        }
+
+        .mobile__accordions {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+        }
+    }
+`
+
 export const ProductInfoSection = styled.section`
     display: flex;
     flex-direction: column;
 
     width: 38.1875rem;
     height: 14.125rem;
+
+    @media (max-width: 1140px) {
+        width: 17.75rem;
+        height: 10rem;
+       gap: 1rem;
+        .heading {
+            margin-top: 14px;
+            font-size: 16px; 
+        }
+
+        h1:nth-child(2) {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .mobile__products {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        
+
+       
+    }
 `
 
 export const DivRating = styled.div`
@@ -15,6 +68,42 @@ export const DivRating = styled.div`
 
     margin-top: 2rem;
     margin-bottom: 1.5rem;
+
+    @media (max-width: 1140px) {
+        display: none;
+
+        .rating__mobile {
+            display: flex;
+        }
+    }
+`
+
+export const DivRatingMobile = styled.div`
+    display: none;
+
+    @media (max-width: 1140px) {
+        display: flex;
+        gap: 14px;
+
+        .rating__pill {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+
+            width: 4.625rem;
+            height: 2.375rem;
+
+            background-color: ${props => props.theme.colors.accent};
+        }
+
+        .rating__content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+    }
+
 `
 
 export const Rating = styled.div`
@@ -25,13 +114,44 @@ export const Rating = styled.div`
 export const DivPrice = styled.div`
     display: flex;
     align-items: center;
+    text-align: center;
     gap: 1rem;
+
+    @media (max-width: 1140px) {
+        display: flex;
+        
+        h1:first-child {
+           
+            font-size: 20px; 
+        }
+
+        h1:nth-child(2) {
+            font-size: 14px;
+            font-weight: 500;
+            color: ${ props => props.theme.colors.lowEmphasis};
+        }
+
+        h1:nth-child(3) {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+       
+    }
+
 `
 
 export const DeliveryInfoSection = styled.section`
     display: flex;
     flex-direction: column; 
     gap: 2.5rem;
+
+    .delivery-buttons__mobile {
+        display: flex;
+
+        position: fixed;
+        bottom: 0;
+    }
 `
 
 export const Details = styled.div`
@@ -39,19 +159,43 @@ export const Details = styled.div`
     gap: 1rem;
     align-items: center;
 
+    @media (max-width: 1140px) {
+        flex-direction: column;
+        align-items: flex-start;
+        order: 2;
+
+        padding-bottom: 26px;
+    }
+
 `
 export const DeliveryDetails = styled.div`
     display: flex;
     flex-direction: column;
-
     width: 12.8125rem;
    
     gap: .5rem;
+
+    @media (max-width: 740px) {
+        width: 20.5rem;
+        h1:first-child {
+            font-size: 14px;
+        }
+
+        p:first-child {
+            font-size: 14px;
+        }
+        
+    }
+    
 `
 
 export const QuantityContainer = styled.div`
     display: flex;
     gap: 1rem;
+
+    @media (max-width: 1140px) {
+        display: none;
+    }
 `
 
 export const CupomContainer = styled.div`
@@ -64,17 +208,23 @@ export const CupomContainer = styled.div`
 
     width: 24.4375rem;
     height: 6rem;
+
+    @media (max-width: 1140px) {
+        order: 1;
+    }
 `
 
 export const Terms = styled.div`
     display: flex;
     flex-direction: column;
     gap: .5rem;
+  
 `
 
 export const CupomCode = styled.span`
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     gap: .5rem;
 
@@ -86,9 +236,15 @@ export const CupomCode = styled.span`
     border-radius: .25rem;
 
     background-color: ${props => props.theme.colors.grey};
+
+   
 `
 
 export const DeliveryButtons = styled.div`
     display: flex;
     gap: 1.5rem;
+
+    @media (max-width: 1140px) {
+        display: none;
+    }
 `

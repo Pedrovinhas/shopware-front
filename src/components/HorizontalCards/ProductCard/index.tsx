@@ -11,9 +11,9 @@ export interface ProductCardProps extends
     CardImageProps,
     TrendingProps,
     ButtonCardProps {
-        productModel: string;
-        productName: string;
-        productValue: string;
+        productModel?: string;
+        productName?: string;
+        productValue?: string;
         onClick?: () => void;
     }
 

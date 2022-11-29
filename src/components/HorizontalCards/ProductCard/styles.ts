@@ -85,7 +85,9 @@ export const RatingDiv = styled.div<RatingProps>`
         align-items: center;
         gap: 1rem;
 
-        
+        @media (max-width: 1140px) {
+            display: none;
+        }
     `}
 
     ${(props) => props.withRating === false && css`

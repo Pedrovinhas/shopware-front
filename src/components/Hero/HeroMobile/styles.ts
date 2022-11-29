@@ -9,7 +9,7 @@ export const HeroContainer = styled.div`
 
         margin-left: 1.25rem;
         margin-right: 1.25rem;
-        margin-top: 1.5rem;
+        margin-top: .5rem;
     
 
         display: flex;

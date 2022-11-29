@@ -4,18 +4,24 @@ import { Header } from "../../components/Header";
 import { Hero } from "../../components/Hero";
 import { Text } from "../../components/Text";
 import { ChevronRightSmallIcon } from "../../components/Icons/Chevron/ChevronRightSmallIcon";
-import { AlignContainer, ColumnContainer } from "./styles";
+import { AlignContainer, CategoriesContainer, ColumnContainer } from "./styles";
 import { useNavigate } from "react-router-dom";
 import { Heading } from "../../components/Heading";
 import { SideNavigation } from "../../components/SideNavigation";
 import { ProductListing } from "../../components/ProductListing";
+import { AppBar } from "../../components/AppBar";
+import { ChevronLeftIcon } from "../../components/Icons/Chevron/ChevronLeftIcon";
+import { HorizontalCards } from "../../components/HorizontalCards";
+import { ProductColumns } from "../../components/ProductListing/ProductColumns";
+import { ProductFilter } from "../../components/ProductFilter";
 
 export function CategoryPage() {
     const navigate = useNavigate()
     return (
-        <>
-         <Header/>
-        <Hero hasBlackFriday/>
+        <CategoriesContainer>
+           <div className="desktop__categories">
+           <Header/>
+           <Hero hasBlackFriday/>
         <ColumnContainer>
             <Breadcrumbs>
                 <Text color="primary" size="medium" title="medium" onClick={() => navigate('/')} >
@@ -36,10 +42,21 @@ export function CategoryPage() {
                 <ProductListing/>
             </AlignContainer>
         </ColumnContainer>
-            
-
-      
         <Footer/>
-        </>
+            </div>
+       
+
+        <div className="mobile__categories">
+            <AppBar>
+                <ChevronLeftIcon isFilled/>
+                <Heading size='small' color='primary' title='regular'>
+                    Handbags
+                </Heading>
+            </AppBar>
+
+            <ProductColumns/>
+            <ProductFilter/>
+        </div>
+        </CategoriesContainer>
     )
 }
