@@ -4,6 +4,8 @@ import { Text } from "../Text";
 import { JewelleryIcon } from "../Icons/JewelleryIcon";
 import { HandbagsIconPrimary } from "../Icons/HandbagsIcon/HandbagsIconPrimary";
 import { WatchIconPrimary } from "../Icons/WatchIcon/WatchIconPrimary";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 export function TopCategories () {
     return (
@@ -12,7 +14,13 @@ export function TopCategories () {
                 Top Categories
               </Text>
             <TopCategoriesItems>
-            <CategoriesItem>
+            <Swiper
+            spaceBetween={8}
+            slidesPerView={4.5}
+            >
+
+              <SwiperSlide>
+              <CategoriesItem>
                 <CategoriesIcon>
                 <SkincareIconPrimary/>
                 </CategoriesIcon>
@@ -20,7 +28,9 @@ export function TopCategories () {
                   Skincare
               </Text>
             </CategoriesItem>
-
+              </SwiperSlide>
+           
+            <SwiperSlide>
             <CategoriesItem>
                 <CategoriesIcon>
                 <JewelleryIcon/>
@@ -29,7 +39,9 @@ export function TopCategories () {
                   Jewellery
               </Text>
             </CategoriesItem>
+            </SwiperSlide>
             
+            <SwiperSlide>
             <CategoriesItem>
                 <CategoriesIcon>
                 <HandbagsIconPrimary/>
@@ -38,7 +50,9 @@ export function TopCategories () {
                   Handbags
               </Text>
             </CategoriesItem>
+            </SwiperSlide>
 
+            <SwiperSlide>
             <CategoriesItem>
                 <CategoriesIcon>
                 <WatchIconPrimary/>
@@ -47,7 +61,10 @@ export function TopCategories () {
                   Watches
               </Text>
             </CategoriesItem>
+            </SwiperSlide>
 
+       
+            <SwiperSlide>
             <CategoriesItem>
                 <CategoriesIcon>
                 <SkincareIconPrimary/>
@@ -56,7 +73,9 @@ export function TopCategories () {
                  Eyewear
               </Text>
             </CategoriesItem>
+            </SwiperSlide>
 
+            <SwiperSlide>
             <CategoriesItem>
                 <CategoriesIcon>
                 <SkincareIconPrimary/>
@@ -65,7 +84,9 @@ export function TopCategories () {
                   Makeups
               </Text>
             </CategoriesItem>
+            </SwiperSlide>
 
+            <SwiperSlide>
             <CategoriesItem>
                 <CategoriesIcon>
                 <SkincareIconPrimary/>
@@ -74,7 +95,8 @@ export function TopCategories () {
                   Facemask
               </Text>
             </CategoriesItem>
-
+            </SwiperSlide>
+          </Swiper>
             </TopCategoriesItems>
 
 

@@ -8,11 +8,12 @@ export interface ButtonProps {
     withButton?: boolean | undefined;
     onClick?: () => void;
     disabled?: boolean;
+    className?: string;
 }
 
-export function Button({variant, size, children, withButton, disabled, onClick}: ButtonProps) {
+export function Button({variant, size, children, withButton, className, disabled, onClick}: ButtonProps) {
     return (
-        <StyledButton as='a' disabled={disabled} size={size} onClick={onClick} variant={variant} withButton={withButton}> 
+        <StyledButton className={className} as='a' disabled={disabled} size={size} onClick={onClick} variant={variant} withButton={withButton}> 
             {children}
         </StyledButton>
     )

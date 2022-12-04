@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Swiper from "swiper";
 
 export const CardsDiv = styled.div`
     margin-top: 4.25rem;
@@ -45,6 +46,10 @@ export const Cards = styled.div`
     display: flex;
     gap: 2.5rem;
     width: 100%;
+
+    .swiper {
+        display: flex;
+    }
 
     @media (max-width: 740px) {
         gap: 1rem;

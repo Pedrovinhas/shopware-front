@@ -11,7 +11,9 @@ import { Accordian } from "../Accordion";
 import { ProductCard } from "../HorizontalCards/ProductCard";
 import PinkBag from '../../assets/Product/pink-bag-small.svg'
 import { useNavigate } from "react-router-dom";
-
+import { ArrowRightIcon } from "../Icons/ArrowIcon/ArrowRightIcon";
+import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/css';
 export interface ProductInfoProps {
         productModel: string;
         productName: string;
@@ -135,14 +137,15 @@ export function ProductInfo({  productModel, productName, productValue }: Produc
       
 
             <div className="delivery-buttons__mobile">
-            <Button size="small" variant="secondary" >
+                <div className="delivery-buttons__container">
+                <Button className='btn__wish' size="small" variant="secondary" >
                     <WishlistIcon  isFilled={false}/>
                 </Button>
             <Button size="large" variant="primary" >
                     <HandbagsWhiteIcon isFilled/>
                     Add to Bag
-                </Button>
-        
+            </Button>
+                </div>
             </div>
 
          
@@ -150,14 +153,14 @@ export function ProductInfo({  productModel, productName, productValue }: Produc
         </DeliveryInfoSection>
 
         <div className="mobile__accordions">
-            <Accordian text='Product Description'>
+            <Accordian text='Product Description' withPadding={false} withSeparator={false} size='medium'>
                 <Text color="lowEmphasis" size="medium" title='medium'>
                 Experience comfortable and easy travelling like never before with this coach bag.
                  It features a zip closure, removable straps and multiple organization compartments 
                  to keep your valuables safe. Crafted from premium material, it is durable and lasts long.
                 </Text>
             </Accordian>
-            <Accordian text='Ratings & Reviews'>
+            <Accordian text='Ratings & Reviews' withPadding={false} withSeparator={false} size='medium'>
                 <Text color="lowEmphasis" size="medium" title='medium'>
                 Experience comfortable and easy travelling like never before with this coach bag.
                  It features a zip closure, removable straps and multiple organization compartments 
@@ -168,27 +171,54 @@ export function ProductInfo({  productModel, productName, productValue }: Produc
          
          <div className="mobile__invites">
             <div className="invites__text">
-            <Text color="highEmphasis" size="medium" title='medium'>
+            <Text color="highEmphasis" size="medium" title='regular'>
             Invite Friends & Earn
             </Text>
             <Text color="lowEmphasis" size="medium" title='medium'>
             Get upto 100 reward points for every friend you invite
             </Text>
-            <Button>
-
+            <Button className='invite__btn'  size="small" variant="secondary" >
+                <Text color="primary" size="medium" title='regular'> 
+                Invite now
+                </Text>
+                <ArrowRightIcon isFilled/>
             </Button>
             </div>
-            <div className="inivtes__block">
+            <div className="invites__block">
 
             </div>
          </div>
 
          <div className="mobile__suggestions">
             
-            <Text color="highEmphasis" size="medium" title='medium'>
+            <Text color="highEmphasis" size="medium" title='regular'>
             You Might Also Like
             </Text>
-            <ProductCard onClick={() => navigate('/product')} src={PinkBag} withRating={false} withButton={false} withDiscount={false} withTrending={true}/>
+            <div className="suggestions__items">
+            <Swiper
+            slidesPerView={3}
+            spaceBetween={16}
+            >
+
+            <SwiperSlide>
+            <ProductCard onClick={() => navigate('/product')} src={PinkBag} withRating={false} withButton={false} withDiscount={false} withTrending={true} withWishlistIcon={false}/>
+            </SwiperSlide>
+            
+            <SwiperSlide>
+            <ProductCard onClick={() => navigate('/product')} src={PinkBag} withRating={false} withButton={false} withDiscount={false} withTrending={true} withWishlistIcon={false}/>
+            </SwiperSlide>
+
+            <SwiperSlide>
+            <ProductCard onClick={() => navigate('/product')} src={PinkBag} withRating={false} withButton={false} withDiscount={false} withTrending={true} withWishlistIcon={false}/>
+            </SwiperSlide>
+
+            <SwiperSlide>
+            <ProductCard onClick={() => navigate('/product')} src={PinkBag} withRating={false} withButton={false} withDiscount={false} withTrending={true} withWishlistIcon={false}/>
+            </SwiperSlide>
+           
+          
+            </Swiper>
+            </div>
          </div>
 
        

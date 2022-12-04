@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as Accordion from '@radix-ui/react-accordion';
-import  styled, { keyframes }  from 'styled-components';
+import  styled, { css, keyframes }  from 'styled-components';
+import { AccordionTriggerContentProps } from '.';
 
 const slideDown = keyframes`
   from {
@@ -22,17 +23,8 @@ const slideUp = keyframes`
   }
 
 `
-const fadeIn = keyframes`
-   from {
-  	opacity: 0;
-  }
-  to {
- 	opacity: 1;
-  }
 
-`
-
-export const StyledTrigger = styled(Accordion.AccordionTrigger)`
+export const StyledTrigger = styled(Accordion.AccordionTrigger)<AccordionTriggerContentProps>`
 
     width: 100%;
     height: 48px;
@@ -40,10 +32,63 @@ export const StyledTrigger = styled(Accordion.AccordionTrigger)`
     justify-content: space-between;
     align-items: center;
     
-    padding: 1rem;
+   
 
     background-color: ${props => props.theme.colors.bright};
     border: none;    
+
+    
+    ${(props) => props.size === 'big' && css`
+        width: 44.25rem;
+        height: 5.5rem;
+  
+    `} 
+
+    ${(props) => props.size === 'medium' && css`
+        width: 22.5rem;
+  
+    `} 
+
+    ${(props) => props.withPadding === false && css`
+        padding: 0;
+  
+    `} 
+
+    ${(props) => props.withPadding === true && css`
+        padding: 1rem;
+  
+    `} 
+
+    ${(props) => props.withSeparator === true && css`
+        flex-direction: column;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+
+        .trigger__content {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        .trigger__separator {
+          width: 100%;
+        }
+  
+    `} 
+
+    ${(props) => props.withSeparator === false && css`
+    .trigger__separator {
+          display: none;
+        }
+
+        .trigger__content {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+        }
+          
+    `} 
     
 
 `
@@ -54,7 +99,7 @@ export const AccordionRoot = styled(Accordion.Root)`
     
 `
 
-export const AccordionContent = styled(Accordion.Content)`
+export const AccordionContent = styled(Accordion.Content)<AccordionTriggerContentProps>`
 
     font-size: ${props => props.theme.fontSizes.base};
     color: ${props => props.theme.colors.primary};
@@ -62,6 +107,17 @@ export const AccordionContent = styled(Accordion.Content)`
     padding: 20px;
     width: 360px;
     overflow: hidden;
+
+    ${(props) => props.size === 'big' && css`
+        width: 44.25rem;
+        height: 5.5rem;
+        padding: 0;
+    `} 
+
+    ${(props) => props.size === 'medium' && css`
+        width: 22.5rem;
+  
+    `} 
 
  
     @media (max-width:1120px) {

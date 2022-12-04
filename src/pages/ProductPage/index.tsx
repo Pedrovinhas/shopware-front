@@ -12,9 +12,23 @@ import { ProductInfo } from "../../components/ProductInfo";
 import { ProductDescription } from "../../components/ProductDescription";
 import { AppBar } from "../../components/AppBar";
 import { ChevronLeftIcon } from "../../components/Icons/Chevron/ChevronLeftIcon";
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
+import { Product } from "../../types/Product";
 
 export function ProductPage() {
     const navigate = useNavigate()
+
+    const [product, setProduct] = useState<Product>()
+
+    useEffect(() => {
+      api.get(`/products/${product?._id}`)
+        .then(({ data }) => {
+          setProduct(data)
+          console.log(data)
+        })
+    }, [])
+    
     return (
         <>
         <ProductPageContainer>
@@ -45,7 +59,7 @@ export function ProductPage() {
                             productSmallImage={CoachSmallPhoto}/>
                     </ProductContainer>
                     <ProductInfo 
-                        productModel="asas" 
+                        productModel='Black Leather '
                         productValue="$54.69" 
                         productName="dsad"/>
                 </RowContainer>

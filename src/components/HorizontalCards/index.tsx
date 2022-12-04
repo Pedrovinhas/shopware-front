@@ -9,8 +9,14 @@ import { Cards, CardsDiv, CardsNav } from "./styles";
 import { Button } from "../Button";
 import { ChevronRightIcon } from "../Icons/Chevron/ChevronRightIcon";
 import { useNavigate } from "react-router-dom";
-
-export interface HorizontalCardsProps {}
+import { Product } from "../../types/Product";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { A11y } from "swiper";
+import 'swiper/css';
+import 'swiper/css/navigation';
+export interface HorizontalCardsProps {
+    products: Product[];
+}
 
 export function HorizontalCards() {
     const navigate = useNavigate()
@@ -39,10 +45,33 @@ export function HorizontalCards() {
             </CardsNav>
 
             <Cards>
-             <ProductCard src={PinkBag} productModel='Grande' productValue='$39.49' productName='Blossom Pouch' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
-             <ProductCard src={LeatherCoachBag} productModel='Coach' productValue='$54.69' productName='Leather Coach Bag' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
-             <ProductCard src={Remus} productModel='Remus' productValue='$57.00' productName='Brown Strap Bag' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
-             <ProductCard src={BlackBag} productModel='Boujee' productValue='$56.49' productName='Black Bag' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
+             <Swiper
+             slidesPerView={4}
+             spaceBetween={50}
+             modules={[ A11y]}
+             pagination={{ clickable: true }}
+             scrollbar={{ draggable: true }}
+             >
+
+                <SwiperSlide>
+                <ProductCard src={PinkBag} productModel='Grande' productValue='$39.49' productName='Blossom Pouch' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
+                </SwiperSlide>
+                <SwiperSlide>
+                <ProductCard src={LeatherCoachBag} productModel='Coach' productValue='$54.69' productName='Leather Coach Bag' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
+                </SwiperSlide>
+                <SwiperSlide>
+                <ProductCard src={Remus} productModel='Remus' productValue='$57.00' productName='Brown Strap Bag' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
+                </SwiperSlide>
+                <SwiperSlide>
+                <ProductCard src={BlackBag} productModel='Boujee' productValue='$56.49' productName='Black Bag' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
+                </SwiperSlide>
+                <SwiperSlide>
+                <ProductCard src={PinkBag} productModel='Grande' productValue='$39.49' productName='Blossom Pouch' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
+                </SwiperSlide>
+                <SwiperSlide>
+                <ProductCard src={LeatherCoachBag} productModel='Coach' productValue='$54.69' productName='Leather Coach Bag' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
+                </SwiperSlide>
+             </Swiper>
             </Cards>
         </CardsDiv>
     )

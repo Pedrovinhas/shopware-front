@@ -12,6 +12,14 @@ export const ProductColumn = styled.div`
          display: none;   
         }
 
+   .mobile__invites {
+        display: none;
+    }
+    
+    .mobile__suggestions {
+        display: none;
+    }
+
     @media (max-width: 1140px) {
         gap: 24px;
 
@@ -24,6 +32,52 @@ export const ProductColumn = styled.div`
             flex-direction: column;
             gap: 24px;
 
+            
+
+        }
+
+        .mobile__invites {
+            display: flex;
+            gap: 19px;
+            width: 360px;
+
+            .invites__text {
+                display: flex;
+                flex-direction: column;
+                width: 215px;
+                height: 36px;
+
+
+                .invite__btn {
+                    background-color: #FFFFFF;
+                    width: 102px;
+                    height: 30px;
+                }
+
+                p:nth-child(2) {
+                    margin-bottom: 8px;
+                }
+               
+                
+            }
+
+            .invites__block {
+                width: 94px;
+                height: 94px;
+                border-radius: 8px;
+                background-color: #FFE6CA;
+            }
+        }
+
+        .mobile__suggestions {
+            display: flex;
+            gap: 8px;
+            flex-direction: column;
+
+            .suggestions__items {
+                display: flex;
+                gap: 16px;
+            }
         }
     }
 `
@@ -147,11 +201,39 @@ export const DeliveryInfoSection = styled.section`
     gap: 2.5rem;
 
     .delivery-buttons__mobile {
-        display: flex;
-
-        position: fixed;
-        bottom: 0;
+        display: none;
     }
+
+    @media (max-width: 1140px) {
+        .delivery-buttons__mobile {
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            background-color: ${props => props.theme.colors.bright};
+
+
+            .delivery-buttons__container {
+                display: flex;
+                margin-bottom: 12px;
+                gap: 10px;
+
+                .btn__wish {
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 8px; 
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    background-color: ${props => props.theme.colors.accent};
+                }
+         }
+        
+    }
+    }
+
+    
 `
 
 export const Details = styled.div`

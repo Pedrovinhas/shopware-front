@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { CartPage } from "../pages/CartPage";
 import { CategoryPage } from "../pages/CategoryPage";
 import { Home } from "../pages/Home";
 import { PageNotFound } from "../pages/PageNotFound";
@@ -12,6 +13,8 @@ export function Router() {
                 <Route path='/category' element={<CategoryPage/>}/>
                 <Route path='/product' element={<ProductPage/>} />
                 <Route path='*' element={<PageNotFound/>}/>
+
+                <Route path='/cart' element={<CartPage />}/>
             </Routes>
         </BrowserRouter>
     )

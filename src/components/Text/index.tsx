@@ -4,8 +4,8 @@ import { StyledText } from "./styles";
 export interface TextProps {
     size: 'large' | 'medium' | 'small' | 'extralarge' | 'doublexlg' | 'triplexlg';
     title: 'medium' | 'regular' | 'normal';
-    color: 'primary' | 'highEmphasis' | 'lowEmphasis' | 'brown' | 'bright' | 'lightText' | 'discount' | 'dark';
-    decoration?: 'line-through' | 'normal'
+    color: 'primary' | 'highEmphasis' | 'lowEmphasis' | 'brown' | 'bright' | 'lightText' | 'discount' | 'dark' | 'error';
+    decoration?: 'line-through' | 'normal' | 'underline'
     cursor?: 'pointer';
     children: ReactNode;
     onClick?: () => void;

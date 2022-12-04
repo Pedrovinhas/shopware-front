@@ -2,14 +2,17 @@ import { Button } from "../../Button";
 import { HandbagsIconUnfilled } from "../../Icons/HandbagsIconUnfilled";
 import { WishlistIcon } from "../../Icons/WishlistIcon";
 import { Text } from "../../Text";
-import { ButtonContainer, CardContainer, CardImageContainer, CardText, DivDiscount, DivPrice, ProductModelContainer, RatingDiv, Trending } from "./styles";
+import { ButtonContainer, CardContainer, CardImageContainer, CardText, DivDiscount, DivPrice, ProductModelContainer, RatingDiv, Trending, WishListContainer } from "./styles";
 import { StarIcon } from "../../Icons/StarIcon";
+import { Product } from "../../../types/Product";
 
 export interface ProductCardProps extends 
     RatingProps, 
     DiscountProps, 
     CardImageProps,
     TrendingProps,
+    // Product,
+    WishlistIconProps,
     ButtonCardProps {
         productModel?: string;
         productName?: string;
@@ -34,11 +37,27 @@ export interface TrendingProps {
     withTrending?: boolean;
 }
 
+export interface WishlistIconProps {
+    withWishlistIcon?: boolean;
+}
+
 export interface CardImageProps {
     src: string;
 }
 
-export function ProductCard({ onClick, withRating, withDiscount, withButton, src, productModel, productName, productValue, withTrending }: ProductCardProps) {
+
+export function ProductCard({ 
+    onClick, 
+    withRating, 
+    withWishlistIcon = true, 
+    withDiscount, 
+    withButton, 
+    src, 
+    productModel, 
+    productName, 
+    productValue, 
+    withTrending 
+    }: ProductCardProps) {
     return (
         <CardContainer >
             <CardImageContainer src={src} onClick={onClick}>
@@ -51,7 +70,10 @@ export function ProductCard({ onClick, withRating, withDiscount, withButton, src
                     <Text size='large' color="highEmphasis" title="medium">
                         {productModel}
                     </Text>
+                    <WishListContainer withWishlistIcon={withWishlistIcon}>
                     <WishlistIcon isFilled={false} hasStroke/>
+                    </WishListContainer>
+                  
                 </ProductModelContainer>
                 <Text size='medium' color="lowEmphasis" title='normal' >
                    {productName}

@@ -16,6 +16,7 @@ ${(props) => props.cursor === 'pointer' && css`
     ${(props) => props.size === 'extralarge' && css`
         font-size: ${props => props.theme.fontSizes.xlg};
     `} 
+    
     ${(props) => props.size === 'doublexlg' && css`
         font-size: ${props => props.theme.fontSizes["2xlg"]};
     `} 
@@ -45,6 +46,10 @@ ${(props) => props.cursor === 'pointer' && css`
 
     ${(props) => props.color === 'highEmphasis' && css`
         color: ${props => props.theme.colors.highEmphasis};
+    `} 
+
+    ${(props) => props.color === 'error' && css`
+        color: ${props => props.theme.colors.error};
     `} 
 
     ${(props) => props.color === 'lowEmphasis' && css`
@@ -79,5 +84,10 @@ ${(props) => props.cursor === 'pointer' && css`
     ${(props) => props.decoration === 'line-through' && css`
         text-decoration-line: line-through;
     `} 
+
+    ${(props) => props.decoration === 'underline' && css`
+        text-decoration-line: underline;
+    `} 
+
 
 `

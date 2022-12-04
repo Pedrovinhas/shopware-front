@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { ButtonCardProps, CardImageProps, DiscountProps, RatingProps, TrendingProps } from ".";
+import { ButtonCardProps, CardImageProps, DiscountProps, RatingProps, TrendingProps, WishlistIconProps } from ".";
 
 export const CardContainer = styled.div`
     display: flex;
@@ -67,6 +67,12 @@ export const Trending = styled.span<TrendingProps>`
         color: ${props => props.theme.colors.bright};
         font-weight: 500;
         font-size: 14px;
+
+        @media (max-width: 1140px) {
+            width: 53px;
+            height: 18px;
+            font-size: 10px;
+        }
     `}
 
     ${(props) => props.withTrending === false && css`
@@ -76,6 +82,16 @@ export const Trending = styled.span<TrendingProps>`
     `}
   
 
+`
+
+export const WishListContainer = styled.div<WishlistIconProps>`
+        ${(props) => props.withWishlistIcon === true && css`
+            display: block;
+        `}
+
+        ${(props) => props.withWishlistIcon === false && css`
+            display: none;
+        `}
 `
 
 export const RatingDiv = styled.div<RatingProps>`

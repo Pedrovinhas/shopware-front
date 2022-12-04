@@ -1,0 +1,54 @@
+[
+    {
+      "_id": "638a9c645e0f4e799f1556a6",
+      "model": "Black Bag",
+      "name": "Boujee",
+      "price": 56.49,
+      "imagePath": "1670028388569-boujee.png",
+      "rating": 4.5,
+      "productAttributes": [
+        {
+          "size": "1 metro",
+          "brand": "Chanel",
+          "color": "pink",
+          "_id": "638a9c645e0f4e799f1556a7"
+        }
+      ],
+      "category": "6388e6002aca14a914b6089b",
+      "__v": 0
+    },
+    {
+      "_id": "638aa4b27ff80cf5061afb4e",
+      "model": "Black Bag",
+      "name": "Boujee",
+      "price": 56.49,
+      "imagePath": "1670030514648-boujee.png",
+      "rating": 4.5,
+      "productAttributes": [
+        {
+          "size": "1 metro",
+          "brand": "Chanel",
+          "color": "black",
+          "_id": "638aa4b27ff80cf5061afb4f"
+        }
+      ],
+      "category": "6388e6002aca14a914b6089b",
+      "__v": 0
+    },
+    {
+      "_id": "638aa5717ff80cf5061afb51",
+      "model": "Casual Watch",
+      "name": "Louis Mornaud",
+      "price": 78.1,
+      "imagePath": "1670030705153-louis-mornaud.png",
+      "rating": 5,
+      "productAttributes": [
+        {
+          "brand": "H2M",
+          "_id": "638aa5717ff80cf5061afb52"
+        }
+      ],
+      "category": "638a3f3c7e83d66356c9955c",
+      "__v": 0
+    }
+  ]

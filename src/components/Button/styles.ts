@@ -39,6 +39,7 @@ export const StyledButton = styled.button<ButtonProps>`
         width: 6.4375rem;
         height: 2.75rem;
 
+
     `}
 
     ${(props) => props.size === 'medium' && css`

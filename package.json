@@ -18,11 +18,13 @@
     "@radix-ui/react-tabs": "^1.0.1",
     "@radix-ui/react-toggle-group": "^1.0.1",
     "@react-theming/storybook-addon": "^1.1.7",
+    "axios": "^1.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.3",
     "storybook-addon-react-router-v6": "^0.2.1",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "swiper": "^8.4.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
