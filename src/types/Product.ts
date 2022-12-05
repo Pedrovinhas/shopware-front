@@ -1,7 +1,7 @@
 export interface Product {
     _id: string;
     model: string;
-    name: string;
+    name: string; 
     price: number;
     imagePath: string;
     imageUrl: string;
@@ -12,5 +12,7 @@ export interface Product {
         brand?: string;
         color?: string;
     }[];
-    category: string;
+    category?: {
+        name: string;
+    } | undefined;
 }

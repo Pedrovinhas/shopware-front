@@ -11,7 +11,8 @@ export function Router() {
             <Routes>
                 <Route path='/' element={<Home/>} />
                 <Route path='/category' element={<CategoryPage/>}/>
-                <Route path='/product' element={<ProductPage/>} />
+                <Route path='/categories/:categoryId/products' element={<CategoryPage/>}/>
+                <Route path='/products/:productId' element={<ProductPage/>} />
                 <Route path='*' element={<PageNotFound/>}/>
 
                 <Route path='/cart' element={<CartPage />}/>

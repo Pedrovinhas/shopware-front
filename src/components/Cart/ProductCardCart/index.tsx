@@ -15,6 +15,7 @@ export function ProductCardCart() {
                 src={LeatherCoachBag}
                 withButton={false}
                 withPrice={false}
+                withStepper={false}
             />
             <CartDetails
                 productValue="54.56"

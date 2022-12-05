@@ -4,8 +4,27 @@ import { Text } from "../../Text"
 import { TextField } from "../../FormControl"
 import { ListingContainer, PageLayout, SortByContainer, SortOptions, ToggleGroupItem, ToggleGroupRoot, ToShowContainer } from "./styles"
 import { SelectControl } from "../../FormControl/SelectControl"
+import { useEffect, useState } from "react"
+import { api } from "../../../services/api"
+import { Product } from "../../../types/Product"
+import { useParams } from "react-router-dom"
+
+
 
 export function ListingOptions() {
+    const { categoryId } = useParams();
+
+    const [products, setProducts] = useState<Product[]>([])
+    useEffect(() => {
+        api.get(`/categories/${categoryId}/products`)
+          .then(({ data }) => {
+            setProducts(data)
+            console.log(data)
+          })
+      }, [])
+
+      
+      
     return (
         <ListingContainer>
             <PageLayout>
@@ -23,7 +42,9 @@ export function ListingOptions() {
                      </ToggleGroupItem>
                 </ToggleGroupRoot>
                 <Text color='highEmphasis' title="medium" size="large">
-                   Showing 1 - 40 of 145 items  
+                   Showing 1 - {products.length} of {products.length} items 
+                   {/* 
+                    */}
                    {/* Passar por props com a quantidade de itens do Array de Objetos de Produtos */}
                 </Text>
             </PageLayout>

@@ -15,9 +15,9 @@ import { ArrowRightIcon } from "../Icons/ArrowIcon/ArrowRightIcon";
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 export interface ProductInfoProps {
-        productModel: string;
-        productName: string;
-        productValue: string;
+        productModel: string | undefined;
+        productName: string | undefined;
+        productValue: string | undefined;
 }
 
 export function ProductInfo({  productModel, productName, productValue }: ProductInfoProps) {
@@ -27,10 +27,10 @@ export function ProductInfo({  productModel, productName, productValue }: Produc
         <ProductInfoSection>
             <div className="mobile__products">
                 <Heading className='heading' color="dark" size="medium" title="regular">
-                    Coach
+                    {productModel}
                 </Heading>
                 <Heading as='h2' color="lowEmphasis" size="small" title="regular">
-                    Leather Coach Bag with adjustable starps.
+                    {productName} with adjustable starps.
                 </Heading>
             </div>
             <DivRating>
@@ -49,7 +49,7 @@ export function ProductInfo({  productModel, productName, productValue }: Produc
 
             <DivPrice > 
                 <Heading size='large' color="highEmphasis" title="bold">
-                    {productValue}
+                    ${productValue}
                 </Heading>
                     <Heading color='lightText' title='regular' size='medium' decoration="line-through">
                         $78.66

@@ -1,10 +1,13 @@
 import { Button } from "../../Button";
-import { ButtonCartContainer, CardCartProductText, CardContent, CardImage, DivPrice, ProductQuantityContainer, VerticalContainer } from "./styles";
+import { ButtonCartContainer, CardCartProductText, CardContent, CardImage, DivPrice, ProductQuantityContainer, StepperContainer, VerticalContainer } from "./styles";
 import { Text } from "../../Text";
+import { Stepper } from "../../Stepper";
 
 export interface CardVerticalProps extends 
     CardImageProps,
     PriceProps,
+    QuantityProps,
+    StepperProps,
     ButtonCartProps {
         productModel?: string;
         productName?: string;
@@ -15,6 +18,14 @@ export interface CardVerticalProps extends
 
 export interface PriceProps {
     withPrice?: boolean;
+}
+
+export interface QuantityProps {
+    withQuantity?: boolean;
+}
+
+export interface StepperProps {
+    withStepper?: boolean;
 }
 
 export interface ButtonCartProps {
@@ -28,7 +39,7 @@ export interface CardImageProps {
 
 
 
-export function CardVertical({ productModel, productName, productValue, productQuantity, src, withButton, withPrice }: CardVerticalProps) {
+export function CardVertical({withStepper, withQuantity, productModel, productName, productValue, productQuantity, src, withButton, withPrice }: CardVerticalProps) {
     return (
         <VerticalContainer>
             <CardImage src={src} />
@@ -50,7 +61,7 @@ export function CardVertical({ productModel, productName, productValue, productQ
                     </Text>
                     </DivPrice>
 
-                    <ProductQuantityContainer>
+                    <ProductQuantityContainer withQuantity={withQuantity}>
                     <Text size='medium' color="lowEmphasis" title='normal' >
                         Qty- {productQuantity}
                     </Text>
@@ -62,10 +73,13 @@ export function CardVertical({ productModel, productName, productValue, productQ
                         Add to Bag 
                     </Button>
                 </ButtonCartContainer>
-{/* 
-                <StepperContainer>
+
+                <StepperContainer withStepper={withStepper}>
                     <Stepper/>
-                </StepperContainer> */}
+                    <Text size='large' color="highEmphasis" title="medium">
+                        {productValue}
+                    </Text>
+                </StepperContainer>
             </CardContent>
         </VerticalContainer>
     )

@@ -42,7 +42,10 @@ export function CartPage() {
         </CartLeftSection>
 
         <CartRightSection>
-            <OrderSummary/>
+            <OrderSummary
+            withOrderCart={false}
+            withOrderButtonsCart={false}
+            />
         </CartRightSection>
            
         </CartContent>

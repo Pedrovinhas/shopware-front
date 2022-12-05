@@ -5,7 +5,7 @@ import { Hero } from "../../components/Hero";
 import { Text } from "../../components/Text";
 import { ChevronRightSmallIcon } from "../../components/Icons/Chevron/ChevronRightSmallIcon";
 import { AlignContainer, CategoriesContainer, ColumnContainer } from "./styles";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Heading } from "../../components/Heading";
 import { SideNavigation } from "../../components/SideNavigation";
 import { ProductListing } from "../../components/ProductListing";
@@ -14,12 +14,36 @@ import { ChevronLeftIcon } from "../../components/Icons/Chevron/ChevronLeftIcon"
 import { HorizontalCards } from "../../components/HorizontalCards";
 import { ProductColumns } from "../../components/ProductListing/ProductColumns";
 import { ProductFilter } from "../../components/ProductFilter";
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
+import { Product } from "../../types/Product";
 
 export function CategoryPage() {
     const navigate = useNavigate()
+    const { categoryId } = useParams();
+
+    const [products, setProducts] = useState<Product[]>([])
+
+    // useEffect(() => {
+    //   api.get('/products')
+    //     .then(({ data }) => {
+    //       setProducts(data)
+    //       console.log(data)
+    //     })
+    // }, [])
+
+    useEffect(() => {
+      api.get(`/categories/${categoryId}/products`)
+        .then(({ data }) => {
+          setProducts(data)
+          console.log(data)
+        })
+    }, [])
+
     return (
         <CategoriesContainer>
            <div className="desktop__categories">
+            
            <Header/>
            <Hero hasBlackFriday/>
         <ColumnContainer>
@@ -29,10 +53,10 @@ export function CategoryPage() {
                 </Text>
                 <ChevronRightSmallIcon isFilled/>
                 <Text color="lowEmphasis" size="medium" title="medium">
-                    Handbag { /* Vou ter que passar isso por props quando clicar lá no componente Horizontal Card (agrupar tudo em um Array de Objetos e fazer .map?) */}
+                {/* {products[0].name} */}
                 </Text>
             </Breadcrumbs>
-
+            
             <Heading color="primary" size="medium" title="bold" >
                 Handbags  { /* Vou ter que passar isso por props, mas não sei como */}
             </Heading>

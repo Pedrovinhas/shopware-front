@@ -1,4 +1,4 @@
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {Breadcrumbs} from "../../components/Breadcrumbs";
 import {Footer} from "../../components/Footer";
 import {Header} from "../../components/Header";
@@ -17,15 +17,18 @@ import { api } from "../../services/api";
 import { Product } from "../../types/Product";
 
 export function ProductPage() {
+    const { productId } = useParams();
     const navigate = useNavigate()
+    const imageURL = 'http://localhost:3003/uploads/'
 
     const [product, setProduct] = useState<Product>()
-
+   
     useEffect(() => {
-      api.get(`/products/${product?._id}`)
+      api.get(`/products/${productId}`)
         .then(({ data }) => {
           setProduct(data)
           console.log(data)
+         
         })
     }, [])
     
@@ -46,22 +49,24 @@ export function ProductPage() {
                         onClick={
                             () => navigate('/category')
                     }>
-                        Handbag
+                       {product?.category?.name}
                     </Text>
                     <ChevronRightSmallIcon isFilled/>
                     <Text color="lowEmphasis" size="medium" title="medium">
-                        Label {/* Vou ter que passar isso por props quando clicar lá no componente Horizontal Card (agrupar tudo em um Array de Objetos e fazer .map?) */} </Text>
+                    {product?.name}</Text>
                 </Breadcrumbs>
                 <RowContainer>
                     <ProductContainer>
                         <ProductPics 
-                            productBigImage={CoachBigPhoto}
-                            productSmallImage={CoachSmallPhoto}/>
+                            productBigImage={imageURL + product?.imagePath == imageURL ?  product?.imageUrl : imageURL + product?.imagePath}
+                            productSmallImage={imageURL + product?.imagePath == imageURL ?  product?.imageUrl : imageURL + product?.imagePath}
+                            />
                     </ProductContainer>
                     <ProductInfo 
-                        productModel='Black Leather '
-                        productValue="$54.69" 
-                        productName="dsad"/>
+                        productModel={product?.model}
+                        productValue={product?.price.toFixed(2)}
+                        productName={product?.name}
+                        />
                 </RowContainer>
                     <ProductDescription/>
             </Container>

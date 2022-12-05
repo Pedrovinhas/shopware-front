@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { ActionButton, LeadingIcon, TextFieldBox, TextFieldInput, TraillingIcon, TraillingIconTwo } from "./styles"
 
 export interface FormControlProps extends LeadingIconProps, TextFieldInputProps, ActionButtonProps, TraillingIconProps, TraillingIconTwoProps {
-    size: 'small' | 'medium' | 'big',
+    size: 'small' | 'medium' | 'big' | 'intermediary',
     children?: ReactNode;
 } 
 

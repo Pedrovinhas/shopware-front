@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { ButtonCartProps, CardImageProps, PriceProps } from ".";
+import { ButtonCartProps, CardImageProps, PriceProps, QuantityProps, StepperProps } from ".";
 
 export const VerticalContainer = styled.div`
 
@@ -82,6 +82,31 @@ ${(props) => props.withButton === true && css`
 
 `
 
-export const ProductQuantityContainer = styled.div `
+export const ProductQuantityContainer = styled.div<QuantityProps> `
 
+${(props) => props.withQuantity === true && css`
+        display: flex;
+
+        
+    `}
+
+    ${(props) => props.withQuantity === false && css`
+        display: none;
+    `}
+`
+
+export const StepperContainer = styled.div<StepperProps> `
+
+${(props) => props.withStepper === true && css`
+        display: flex;
+        justify-content: space-between;
+        width: 250px;
+        align-items: center;
+
+        
+    `}
+
+    ${(props) => props.withStepper === false && css`
+        display: none;
+    `}
 `

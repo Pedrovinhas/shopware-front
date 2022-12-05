@@ -11,6 +11,7 @@ import { NotificationIcon } from "../Icons/HeaderIcons/NotificationIcon";
 import { AddHomeIcon } from "../Icons/HeaderIcons/AddHomeIcon";
 import { MenuMobileIcon } from "../Icons/MenuMobileIcon";
 import { Heading } from "../Heading";
+import { ModalCart } from "../Cart/CartModal";
 
 export interface HeaderProps {}
 
@@ -43,7 +44,7 @@ export function Header(props: HeaderProps) {
                     <div className='desktop-icons'>
                     <WishlistIcon isFilled={false}/>
                     <ProfileIcon isFilled/>
-                    <HandbagsIconUnfilled isFilled={false}/>
+                    <ModalCart/>
                     </div>
 
                     <div className='mobile-icons'>

@@ -30,10 +30,10 @@ export function HandpickedCollections() {
      
     
     <CollectionsContainer>
-        <ProductCollection src={PersonalCare} productCollection="Personal Care" onClick={() => navigate('*')} />
-        <ProductCollection src={Handbags} productCollection="Handbags" onClick={() => navigate('/category')}  />
-        <ProductCollection src={WristWatches} productCollection="Wrist Watches" onClick={() => navigate('*')}  />
-        <ProductCollection src={Sunglasses} productCollection="Sun Glasses" onClick={() => navigate('*')}  />
+        <ProductCollection src={PersonalCare} productCollection="Personal Care" onClick={() => navigate('/categories/6388e6002aca14a914b6089b/products')} />
+        <ProductCollection src={Handbags} productCollection="Handbags" onClick={() => navigate('/categories/6388e6002aca14a914b6089b/products')}  />
+        <ProductCollection src={WristWatches} productCollection="Wrist Watches" onClick={() => navigate('/categories/6388e6002aca14a914b6089b/products')}  />
+        <ProductCollection src={Sunglasses} productCollection="Sun Glasses" onClick={() => navigate('/categories/6388e6002aca14a914b6089b/products')}  />
     </CollectionsContainer>
     
     </HandPickedContainer>

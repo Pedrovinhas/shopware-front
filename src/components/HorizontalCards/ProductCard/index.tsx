@@ -95,7 +95,7 @@ export function ProductCard({
                 </RatingDiv>
                 <DivPrice > 
                 <Text size='large' color="highEmphasis" title="medium">
-                    {productValue}
+                   ${productValue} 
                 </Text>
                 <DivDiscount withDiscount={withDiscount}>
                  

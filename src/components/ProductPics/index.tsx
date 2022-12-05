@@ -5,7 +5,7 @@ import { PhotosContainer, PictureContainer, ProductImage, ProductImageMobile, Pr
 import { Navigation } from "swiper";
 import { useSwiper } from 'swiper/react';
 export interface ProductPicsProps {
-    productBigImage: string;
+    productBigImage: string | undefined;
     productSmallImage?: string;
 }
 

@@ -129,7 +129,9 @@ export const DivPrice = styled.div`
 `
 
 export const DivDiscount = styled.div<DiscountProps>`
-    
+    display: flex;
+    align-items: center;
+    gap: 4px;
 
     ${(props) => props.withDiscount === true && css`
         display: flex;

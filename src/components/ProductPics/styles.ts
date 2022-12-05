@@ -64,7 +64,6 @@ export const ProductSliderMobile = styled.div`
 export const ProductImageMobile = styled.img`
     width: 20.5rem;
     height: 21.25rem;
-
     border-radius: 4px;
     margin-left: 1rem;
 `

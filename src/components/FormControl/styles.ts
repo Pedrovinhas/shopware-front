@@ -26,6 +26,16 @@ export const TextFieldBox = styled.button<FormControlProps>`
         
     `} 
 
+    ${(props) => props.size === 'intermediary' && css`
+        width: 22.5rem;
+        height: 3.5rem;
+
+        display: flex;
+
+      
+        
+    `} 
+
 `
 
 export const LeadingIcon = styled.span<LeadingIconProps>`
