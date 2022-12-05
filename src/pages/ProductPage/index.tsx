@@ -7,7 +7,6 @@ import {ProductPics} from "../../components/ProductPics";
 import {Text} from "../../components/Text";
 import {Container, ProductContainer, ProductPageContainer, ProductPageMobile, RowContainer} from "./styles";
 import CoachBigPhoto from '../../assets/Product/coach-big.png'
-import CoachSmallPhoto from '../../assets/Product/coach-small.png'
 import { ProductInfo } from "../../components/ProductInfo";
 import { ProductDescription } from "../../components/ProductDescription";
 import { AppBar } from "../../components/AppBar";
@@ -26,9 +25,7 @@ export function ProductPage() {
     useEffect(() => {
       api.get(`/products/${productId}`)
         .then(({ data }) => {
-          setProduct(data)
-          console.log(data)
-         
+          setProduct(data)         
         })
     }, [])
     

@@ -107,7 +107,7 @@ export function OrderSummary({ withHeader, withOrderPageText, withOrderCart, wit
             
             <OrderButtonsCart withOrderButtonsCart={withOrderButtonsCart}>
             <TextField hasActionButton={true} actionLabel='CHECK' size="intermediary" text="Apply Coupon Code"/>
-            <Button variant="primary" size="large" >
+            <Button variant="primary" size="large" onClick={() => navigate('/cart')}>
                     Place Order
                 </Button>
                 <Text decoration="underline" color="primary" size="medium" title="regular" cursor="pointer" onClick={

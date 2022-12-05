@@ -14,7 +14,7 @@ export function HeroMobile () {
         <Swiper
          modules={[ Autoplay]}
          spaceBetween={8}
-         slidesPerView={1.4}
+         slidesPerView={1.1}
          autoplay={{
             delay: 5000,
             disableOnInteraction: false,

@@ -23,9 +23,9 @@ export function Header(props: HeaderProps) {
             <StyledNavLeft>
                 <img src={CoralLogo} alt="Logo do Site" />
                 <StyledNavDiv>
-                    <Text cursor="pointer" color="highEmphasis" title="medium" size="medium" as='a' onClick={() => navigate('/')}>Handbags</Text>
-                    <Text  cursor="pointer" color="highEmphasis" title="medium" size="medium" onClick={() => navigate('*')} >Watches</Text>
-                    <Text  cursor="pointer" color="highEmphasis" title="medium" size="medium" onClick={() => navigate('*')}>Skincare</Text>
+                    <Text cursor="pointer" color="highEmphasis" title="medium" size="medium" as='a' onClick={() => navigate('/categories/6388e6002aca14a914b6089b/products')}>Handbags</Text>
+                    <Text  cursor="pointer" color="highEmphasis" title="medium" size="medium" onClick={() => navigate('/categories/638a3f3c7e83d66356c9955c/products')} >Watches</Text>
+                    <Text  cursor="pointer" color="highEmphasis" title="medium" size="medium" onClick={() => navigate('/categories/6388e6672aca14a914b6089d/products')}>Skincare</Text>
                     <Text  cursor="pointer" color="highEmphasis" title="medium" size="medium" onClick={() => navigate('*')}>Jewellery</Text>
                     <Text  cursor="pointer" color="highEmphasis" title="medium" size="medium" onClick={() => navigate('*')}>Apparels</Text>
                 </StyledNavDiv>

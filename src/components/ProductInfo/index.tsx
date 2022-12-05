@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowRightIcon } from "../Icons/ArrowIcon/ArrowRightIcon";
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
+import { Stepper } from "../Stepper";
 export interface ProductInfoProps {
         productModel: string | undefined;
         productName: string | undefined;
@@ -102,7 +103,7 @@ export function ProductInfo({  productModel, productName, productValue }: Produc
                 <Heading size="small" color="dark" title="bold">
                 Quantity:
                 </Heading>
-                {/* <Stepper/> */}
+                <Stepper/> 
             </QuantityContainer>
             <CupomContainer>
                 <Terms>

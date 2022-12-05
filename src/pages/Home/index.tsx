@@ -18,6 +18,7 @@ import { Cta } from "../../components/Cta";
 import { TopCategories } from "../../components/TopCategories";
 import { HeroMobile } from "../../components/Hero/HeroMobile";
 import { BottomNavigation } from "../../components/BottomNavigation";
+import { BannerText } from "../../components/BannerText";
 
 
 export function Home() {
@@ -26,6 +27,7 @@ export function Home() {
       <>
        
        <Header/>
+       <BannerText/>
        <Hero hasBlackFriday={false} src={HeaderHero}/>
        <HeroMobile/>
        <TopCategories/>

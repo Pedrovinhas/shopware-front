@@ -15,14 +15,14 @@ export const Overlay = styled(Dialog.Overlay)`
 export const Content = styled(Dialog.Content)`
     width: 394px;
     height: 697px;
-  
+
     background-color: ${props => props.theme.colors.bright};
 
     position: absolute;
     right: 0;
-    top: 55px;
+    top: 0px;
 
-    margin-right: 10px;
+    margin-right: 6px;
 
     display: flex;
     justify-content: center;
@@ -32,7 +32,7 @@ export const Content = styled(Dialog.Content)`
 
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 16px;
     }
     
 `
@@ -41,7 +41,7 @@ export const CloseButton = styled(Dialog.Close)`
     border: 0;
     background-color: ${props => props.theme.colors.bright};
 
-    margin-top: 12px;
+    margin-top: 6px;
     transition: all .4s ease-in-out;
     cursor: pointer;
     &:hover {

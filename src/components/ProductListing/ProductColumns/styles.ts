@@ -13,7 +13,6 @@ export const GridContainer = styled.div`
     @media (max-width: 1140px) {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
 
         column-gap: 24px;
         row-gap: 16px;

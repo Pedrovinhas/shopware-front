@@ -9,6 +9,7 @@ import { HandbagsIconFilled } from '../Icons/HandbagsIconFilled';
 import { HandbagsIconPrimary } from '../Icons/HandbagsIcon/HandbagsIconPrimary';
 import { HandbagsIconSecondary } from '../Icons/HandbagsIcon/HandbagsIconSecondary';
 import { HandbagsIconUnfilled } from '../Icons/HandbagsIconUnfilled';
+import { useNavigate } from 'react-router-dom';
 
 export interface TabProps {
     children: string;
@@ -24,6 +25,7 @@ export function Tab({ children, value }: TabProps) {
 }
 
 export function BottomNavigation() {
+    const navigate = useNavigate()
     return (
         <TabsRoot defaultValue="1" orientation="vertical">
             <TabsList aria-label="Bottom Navigation">
@@ -39,7 +41,7 @@ export function BottomNavigation() {
                     </span>
                 </BottomTab>
 
-                <BottomTab value='2'> 
+                <BottomTab value='2' onClick={() => navigate('/category')}> 
                     <span className="icon__categories">
                         <CategoriesIcon isFilled={false}/>
                     </span>

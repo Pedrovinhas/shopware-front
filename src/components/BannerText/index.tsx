@@ -8,9 +8,9 @@ export function BannerText(props: BannerTextProps) {
         <StyledBannerDiv>
             <Text color='highEmphasis' size='medium' title="medium" >
             We are currently experiencing local customs clearance delays. 
-            For the latest updates, please check your order status 
-            here
+            For the latest updates, please check your order status <span className="here"> here</span>
             </Text>
         </StyledBannerDiv>
     )
 }
+

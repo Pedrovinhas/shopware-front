@@ -47,29 +47,36 @@ export function HorizontalCards() {
             <Cards>
              <Swiper
              slidesPerView={4}
-             spaceBetween={50}
+             spaceBetween={150}
              modules={[ A11y]}
              pagination={{ clickable: true }}
              scrollbar={{ draggable: true }}
+             breakpoints={{
+                940: {
+                    width: 940,
+                    spaceBetween: 50,
+                    slidesPerView: 3,
+                }
+             }}
              >
 
                 <SwiperSlide>
-                <ProductCard src={PinkBag} productModel='Grande' productValue='$39.49' productName='Blossom Pouch' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
+                <ProductCard src={PinkBag} productModel='Grande' productValue='39.49' productName='Blossom Pouch' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
                 </SwiperSlide>
                 <SwiperSlide>
-                <ProductCard src={LeatherCoachBag} productModel='Coach' productValue='$54.69' productName='Leather Coach Bag' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
+                <ProductCard src={LeatherCoachBag} productModel='Coach' productValue='54.69' productName='Leather Coach Bag' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
                 </SwiperSlide>
                 <SwiperSlide>
-                <ProductCard src={Remus} productModel='Remus' productValue='$57.00' productName='Brown Strap Bag' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
+                <ProductCard src={Remus} productModel='Remus' productValue='57.00' productName='Brown Strap Bag' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
                 </SwiperSlide>
                 <SwiperSlide>
-                <ProductCard src={BlackBag} productModel='Boujee' productValue='$56.49' productName='Black Bag' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
+                <ProductCard src={BlackBag} productModel='Boujee' productValue='56.49' productName='Black Bag' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
                 </SwiperSlide>
                 <SwiperSlide>
-                <ProductCard src={PinkBag} productModel='Grande' productValue='$39.49' productName='Blossom Pouch' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
+                <ProductCard src={PinkBag} productModel='Grande' productValue='39.49' productName='Blossom Pouch' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
                 </SwiperSlide>
                 <SwiperSlide>
-                <ProductCard src={LeatherCoachBag} productModel='Coach' productValue='$54.69' productName='Leather Coach Bag' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
+                <ProductCard src={LeatherCoachBag} productModel='Coach' productValue='54.69' productName='Leather Coach Bag' withRating={false} withButton={false} withDiscount={false} withTrending={false}/>
                 </SwiperSlide>
              </Swiper>
             </Cards>

@@ -16,7 +16,7 @@ export function TrendingDealsSection () {
         <div className="slider__banners">
             <Swiper
              spaceBetween={8}
-             slidesPerView={1.4}
+             slidesPerView={1.1}
             >
                 
             <SwiperSlide>
