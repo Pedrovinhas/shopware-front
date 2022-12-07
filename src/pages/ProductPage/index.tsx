@@ -14,6 +14,7 @@ import { ChevronLeftIcon } from "../../components/Icons/Chevron/ChevronLeftIcon"
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { Product } from "../../types/Product";
+import { SkeletonLoading } from "../../components/SkeletonLoading";
 
 export function ProductPage() {
     const { productId } = useParams();
@@ -29,8 +30,13 @@ export function ProductPage() {
         })
     }, [])
     
-    return (
-        <>
+
+        if(!product) {
+            return <SkeletonLoading/>
+        }
+
+        return (
+            <>
         <ProductPageContainer>
             <Header/>
             <Container>
@@ -44,7 +50,7 @@ export function ProductPage() {
                     <ChevronRightSmallIcon isFilled/>
                     <Text color="primary" size="medium" title="medium"
                         onClick={
-                            () => navigate('/category')
+                            () => navigate(`/category`)
                     }>
                        {product?.category?.name}
                     </Text>
@@ -59,10 +65,12 @@ export function ProductPage() {
                             productSmallImage={imageURL + product?.imagePath == imageURL ?  product?.imageUrl : imageURL + product?.imagePath}
                             />
                     </ProductContainer>
+                 
                     <ProductInfo 
-                        productModel={product?.model}
-                        productValue={product?.price.toFixed(2)}
-                        productName={product?.name}
+                        product={product!}
+                        // model={product?.model} 
+                        // price={product?.price}
+                        // name={product?.name}
                         />
                 </RowContainer>
                     <ProductDescription/>
@@ -82,11 +90,12 @@ export function ProductPage() {
                 </AppBar>
                 <ProductPics productBigImage={CoachBigPhoto}/>
                 <ProductInfo 
-                        productModel="asas" 
-                        productValue="$54.69" 
-                        productName="dsad"/>
+                        product={product!}
+                        // model={product?.model} 
+                        // price={product?.price}
+                        // name={product?.name}
+                        />
         </ProductPageMobile>
-
         </>
     )
 }

@@ -15,23 +15,31 @@ import { ArrowRightIcon } from "../Icons/ArrowIcon/ArrowRightIcon";
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 import { Stepper } from "../Stepper";
+import { useCart } from "../../hooks/useCart";
+import { Product } from "../../types/Product";
+
 export interface ProductInfoProps {
-        productModel: string | undefined;
-        productName: string | undefined;
-        productValue: string | undefined;
+    product: Product 
 }
 
-export function ProductInfo({  productModel, productName, productValue }: ProductInfoProps) {
+export function ProductInfo({ product }: ProductInfoProps) {
     const navigate = useNavigate()
+    const { addToCart } = useCart();
+
+    function handleAddToCart(product: Product) {
+        addToCart(product);
+        console.log(product)
+    }
+
     return (
         <ProductColumn>
         <ProductInfoSection>
             <div className="mobile__products">
                 <Heading className='heading' color="dark" size="medium" title="regular">
-                    {productModel}
+                    {product.model}
                 </Heading>
                 <Heading as='h2' color="lowEmphasis" size="small" title="regular">
-                    {productName} with adjustable starps.
+                    {product.name} with adjustable starps.
                 </Heading>
             </div>
             <DivRating>
@@ -50,10 +58,10 @@ export function ProductInfo({  productModel, productName, productValue }: Produc
 
             <DivPrice > 
                 <Heading size='large' color="highEmphasis" title="bold">
-                    ${productValue}
+                    ${product.price}
                 </Heading>
                     <Heading color='lightText' title='regular' size='medium' decoration="line-through">
-                        $78.66
+                        ${product.price}
                     </Heading>
                     <Heading size='small' color='vibrant' title="regular"  >
                         $50% OFF
@@ -125,7 +133,7 @@ export function ProductInfo({  productModel, productName, productValue }: Produc
             </CupomContainer>
         
             <DeliveryButtons>
-                <Button size="large" variant="primary" >
+                <Button size="large" variant="primary" onClick={() => handleAddToCart(product)}>
                     <HandbagsWhiteIcon isFilled/>
                     Add to Bag
                 </Button>

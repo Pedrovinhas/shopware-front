@@ -3,7 +3,7 @@ import { ButtonCartContainer, CardCartProductText, CardContent, CardImage, DivPr
 import { Text } from "../../Text";
 import { Stepper } from "../../Stepper";
 
-export interface CardVerticalProps extends 
+export interface CartProductProps extends 
     CardImageProps,
     PriceProps,
     QuantityProps,
@@ -39,7 +39,7 @@ export interface CardImageProps {
 
 
 
-export function CardVertical({withStepper, withQuantity, productModel, productName, productValue, productQuantity, src, withButton, withPrice }: CardVerticalProps) {
+export function CartProduct({withStepper, withQuantity, productModel, productName, productValue, productQuantity, src, withButton, withPrice }: CartProductProps) {
     return (
         <VerticalContainer>
             <CardImage src={src} />
@@ -49,11 +49,16 @@ export function CardVertical({withStepper, withQuantity, productModel, productNa
                         <Text size='large' color="highEmphasis" title="medium">
                             {productModel}
                         </Text>
+                        <p>
+                            X
+                        </p>
                     </CardCartProductText>
                     
                     <Text size='medium' color="lowEmphasis" title='normal' >
                        {productName}
                     </Text>
+
+                   
 
                     <DivPrice withPrice={withPrice}>
                     <Text size='large' color="highEmphasis" title="medium">

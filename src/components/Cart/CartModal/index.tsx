@@ -3,7 +3,7 @@ import { AppBar } from '../../AppBar';
 import { Heading } from '../../Heading';
 import { ArrowRightIcon } from '../../Icons/ArrowIcon/ArrowRightIcon';
 import { HandbagsIconUnfilled } from '../../Icons/HandbagsIconUnfilled';
-import { CardVertical } from '../CardVertical';
+import { CartProduct } from '../CartProduct';
 import { CloseButton, Content, Overlay } from './styles';
 import LeatherCoachBag from '../../../assets/Product/leather-coach-bag.png'
 import { Separator } from '../../Separator';
@@ -31,8 +31,8 @@ export function ModalCart() {
                 </Heading>
             </AppBar>
             </CloseButton>
-           
-           <CardVertical 
+           {/* <p> Your cart is empty :/ </p> */}
+           <CartProduct 
                 withQuantity={false} 
                 withPrice={false} 
                 withStepper={true} 
@@ -43,7 +43,7 @@ export function ModalCart() {
                 productValue='$54.69'
             />
 
-            <CardVertical 
+            <CartProduct 
                 withQuantity={false} 
                 withPrice={false} 
                 withStepper={true} 

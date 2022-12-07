@@ -10,7 +10,7 @@ export function Router() {
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<Home/>} />
-                <Route path='/category' element={<CategoryPage/>}/>
+                <Route path='/products' element={<CategoryPage/>}/>
                 <Route path='/categories/:categoryId/products' element={<CategoryPage/>}/>
                 <Route path='/products/:productId' element={<ProductPage/>} />
                 <Route path='*' element={<PageNotFound/>}/>

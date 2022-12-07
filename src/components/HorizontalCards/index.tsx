@@ -38,7 +38,7 @@ export function HorizontalCards() {
               </Text>
             </span>
           
-            <Button size="small" variant="secondary" onClick={() => navigate('/category')}>
+            <Button size="small" variant="secondary" onClick={() => navigate('/products')}>
                 View All
                 <ChevronRightIcon isFilled={true}/>
             </Button>

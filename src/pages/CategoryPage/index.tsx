@@ -17,21 +17,23 @@ import { ProductFilter } from "../../components/ProductFilter";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { Product } from "../../types/Product";
+import { SkeletonLoading } from "../../components/SkeletonLoading";
 
 export function CategoryPage() {
     const navigate = useNavigate()
     const { categoryId } = useParams();
 
     const [products, setProducts] = useState<Product[]>()
+    const [categories, setCategories] = useState([])
     const [loading, setLoading] = useState(false);
 
-    // useEffect(() => {
-    //   api.get('/products')
-    //     .then(({ data }) => {
-    //       setProducts(data)
-    //       console.log(data)
-    //     })
-    // }, [])
+    useEffect(() => {
+      api.get('/products')
+        .then(({ data }) => {
+          setProducts(data)
+          console.log(data)
+        })
+    }, [])
 
     const fetchProducts = async () => {
         setLoading(true);
@@ -46,18 +48,8 @@ export function CategoryPage() {
     }, [])
 
 
-    // useEffect(() => {
-    //   api.get(`/categories/${categoryId}/products`)
-    //     .then(({ data }) => {
-    //       setProducts(data)
-    //       console.log(data)
-    //     })
-    // }, [])
-
-   
-
         if(!products) {
-            return <h1> Loading Data </h1>
+            return <SkeletonLoading/>
         }
         return  ( <CategoriesContainer>
             <div className="desktop__categories">

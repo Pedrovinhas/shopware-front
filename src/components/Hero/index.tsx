@@ -34,7 +34,7 @@ export function Hero({ hasBlackFriday, src }: HeroProps) {
                 </Text>
             </Box>
            
-            <Button variant="primary" size="intermediary" onClick={() => navigate('*')}>
+            <Button variant="primary" size="intermediary" onClick={() => navigate('/categories/6388e6002aca14a914b6089b/products')}>
                 <ArrowIcon isFilled/>
                 See more
             </Button>

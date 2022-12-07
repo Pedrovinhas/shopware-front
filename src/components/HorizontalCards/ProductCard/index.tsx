@@ -42,7 +42,7 @@ export interface WishlistIconProps {
 }
 
 export interface CardImageProps {
-    src: string;
+    src: string | undefined;
 }
 
 

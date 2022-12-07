@@ -1,4 +1,4 @@
-import { CardVertical } from "../CardVertical";
+import { CartProduct } from "../CartProduct";
 import { CartDetails } from "../CartDetails";
 import { CartContainer } from "./styles";
 import LeatherCoachBag from '../../../assets/Product/leather-coach-bag.png'
@@ -8,7 +8,7 @@ export function ProductCardCart() {
         <CartContainer>
 
             <div className="cart__products">
-            <CardVertical  
+            <CartProduct  
                 productModel="Coach" 
                 productName="Leather Coach Bag"
                 productQuantity="1"

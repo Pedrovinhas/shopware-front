@@ -64,7 +64,9 @@ export const DivPrice = styled.div<PriceProps>`
 `
 
 export const CardCartProductText = styled.div`
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
 `
 
