@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as Accordion from '@radix-ui/react-accordion';
 import  styled, { css, keyframes }  from 'styled-components';
-import { AccordionTriggerContentProps } from '.';
+import { AccordianProps, AccordionTextSizeProps, AccordionTriggerContentProps } from '.';
 
 const slideDown = keyframes`
   from {
@@ -110,7 +110,7 @@ export const AccordionContent = styled(Accordion.Content)<AccordionTriggerConten
 
     ${(props) => props.size === 'big' && css`
         width: 44.25rem;
-        height: 5.5rem;
+        min-height: 5.5rem;
         padding: 0;
     `} 
 
@@ -126,6 +126,8 @@ export const AccordionContent = styled(Accordion.Content)<AccordionTriggerConten
         
     &[data-state='open'] {
             animation: ${slideDown} 400ms cubic-bezier(0.87, 0, 0.13, 1);
+
+            
         }
 
     &[data-state='closed'] {
@@ -135,4 +137,26 @@ export const AccordionContent = styled(Accordion.Content)<AccordionTriggerConten
     }
 
     
+`
+
+export const TextSizeContainer = styled.span<AccordionTextSizeProps>`
+
+    ${(props) => props.textSize === 'big' && css`
+
+      p {
+        font-size: ${props => props.theme.fontSizes.xl};
+      }
+       
+    `} 
+
+    ${(props) => props.textSize === 'small' && css`
+
+    p {
+      font-size: ${props => props.theme.fontSizes.base};
+    }
+   
+  
+    `} 
+
+
 `

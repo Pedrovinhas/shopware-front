@@ -43,8 +43,10 @@ export function CartPage() {
 
         <CartRightSection>
             <OrderSummary
+            withCartProduct={false}
             withOrderCart={false}
             withOrderButtonsCart={false}
+            withOrderHeaderDetails={false}
             />
         </CartRightSection>
            
@@ -58,6 +60,7 @@ export function CartPage() {
             text='Apply Coupon Code' 
             withPadding={false} 
             withSeparator={true}
+            type='multiple'
         >
             <TextField hasActionButton={true} actionLabel='CHECK' size="big" text="Apply Coupon Code"/>
         </Accordian>

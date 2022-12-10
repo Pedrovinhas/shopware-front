@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { OrderButtonsCartProps, OrderCartProps, OrderHeaderProps, OrderPageButtonsProps, OrderPageTextProps } from ".";
+import { OrderButtonsCartProps, OrderCartProductProps, OrderCartProps, OrderHeaderDetailsProps, OrderHeaderProps, OrderPageButtonsProps, OrderPageTextProps } from ".";
 
 export const OrderContainer = styled.div`
     display: flex;
@@ -129,3 +129,45 @@ export const OrderButtonsCart = styled.div<OrderButtonsCartProps>`
     `}
 
 `
+
+export const OrderCartProduct = styled.div<OrderCartProductProps>`
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    align-items: center;
+    width: 360px;
+
+    ${(props) => props.withCartProduct === true && css`
+    display: flex;
+    justify-content: space-between;
+ 
+        
+    `}
+
+    ${(props) => props.withCartProduct === false && css`
+        display: none;
+    `}
+
+`
+
+
+export const OrderHeaderDetails = styled.header<OrderHeaderDetailsProps>`
+     display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    ${(props) => props.withOrderHeaderDetails === true && css`
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+        
+    `}
+
+    ${(props) => props.withOrderHeaderDetails === false && css`
+        display: none;
+    `}
+
+`
+
+

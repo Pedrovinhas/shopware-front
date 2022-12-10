@@ -13,26 +13,26 @@ export const Overlay = styled(Dialog.Overlay)`
 `
 
 export const Content = styled(Dialog.Content)`
-    width: 394px;
-    height: 697px;
+    width: 24.625rem;
+    min-height: 43.5625rem;
 
     background-color: ${props => props.theme.colors.bright};
 
     position: absolute;
     right: 0;
-    top: 0px;
+    top: 0rem;
 
-    margin-right: 6px;
+    margin-right: .375rem;
 
     display: flex;
     justify-content: center;
 
     .modal__container {
-        width: 377px;
+        width: 23.5625rem;
 
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 1rem;
     }
     
 `
@@ -41,11 +41,29 @@ export const CloseButton = styled(Dialog.Close)`
     border: 0;
     background-color: ${props => props.theme.colors.bright};
 
-    margin-top: 6px;
+    margin-top: .375rem;
     transition: all .4s ease-in-out;
     cursor: pointer;
     &:hover {
         background-color: ${props => props.theme.colors.grey};
       
+    }
+`
+
+export const EmptyCart = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: .5rem;
+
+    text-align: center;
+
+    p { 
+        width: 70%;
+    }
+
+    img {
+        width: 50%;
     }
 `

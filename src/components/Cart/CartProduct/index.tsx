@@ -11,7 +11,7 @@ export interface CartProductProps extends
     ButtonCartProps {
         productModel?: string;
         productName?: string;
-        productValue?: string;
+        productValue?: number;
         productQuantity?: string;
         
     }

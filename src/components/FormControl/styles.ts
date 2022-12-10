@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { ActionButtonProps, FormControlProps, LeadingIconProps, TextFieldInputProps, TraillingIconProps, TraillingIconTwoProps } from ".";
+import InputMask from "react-input-mask";
 
 export const TextFieldBox = styled.button<FormControlProps>`
      border-radius: ${props => props.theme.radii.base};
@@ -11,9 +12,6 @@ export const TextFieldBox = styled.button<FormControlProps>`
     ${(props) => props.size === 'small' && css`
         width: 3.5rem;
         height: 3.5rem;
-
-
-        
     `} 
 
     ${(props) => props.size === 'big' && css`
@@ -21,9 +19,6 @@ export const TextFieldBox = styled.button<FormControlProps>`
         height: 3.25rem;
 
         display: flex;
-
-      
-        
     `} 
 
     ${(props) => props.size === 'intermediary' && css`
@@ -31,8 +26,14 @@ export const TextFieldBox = styled.button<FormControlProps>`
         height: 3.5rem;
 
         display: flex;
+        
+    `} 
 
-      
+    ${(props) => props.size === 'medium' && css`
+        width: 19rem;
+        height: 3.5rem;
+
+        display: flex;
         
     `} 
 

@@ -1,13 +1,17 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
+import InputMask from "react-input-mask";
 import { ActionButton, LeadingIcon, TextFieldBox, TextFieldInput, TraillingIcon, TraillingIconTwo } from "./styles"
 
 export interface FormControlProps extends LeadingIconProps, TextFieldInputProps, ActionButtonProps, TraillingIconProps, TraillingIconTwoProps {
     size: 'small' | 'medium' | 'big' | 'intermediary',
     children?: ReactNode;
+    mask?: string | Array<(string | RegExp)> | any;
 } 
 
 export interface TextFieldInputProps {
     text?: string;
+    onChange?: (e:React.ChangeEvent<HTMLInputElement>) => void;
+    value?: string;
 }
 
 export interface LeadingIconProps {
@@ -28,13 +32,17 @@ export interface TraillingIconTwoProps {
 
 
 
-export function TextField({ children, size, text, hasActionButton, hasTraillingIcon, hasTraillingIconTwo, hasLeadingIcon, actionLabel }: FormControlProps) {
+export function TextField({ mask, children, onChange, value, size, text, hasActionButton, hasTraillingIcon, hasTraillingIconTwo, hasLeadingIcon, actionLabel, ...props }: FormControlProps) {
     return (
       <TextFieldBox size={size}>
         <LeadingIcon hasLeadingIcon={hasLeadingIcon}>
 
         </LeadingIcon>
-        <TextFieldInput placeholder={text}/>
+        
+        <InputMask  mask={mask} onChange={onChange} value={value}>
+        <TextFieldInput placeholder={text}  {...props}
+        />
+        </InputMask>
          
        
 

@@ -4,13 +4,18 @@ import { Heading } from '../../Heading';
 import { ArrowRightIcon } from '../../Icons/ArrowIcon/ArrowRightIcon';
 import { HandbagsIconUnfilled } from '../../Icons/HandbagsIconUnfilled';
 import { CartProduct } from '../CartProduct';
-import { CloseButton, Content, Overlay } from './styles';
+import { CloseButton, Content, EmptyCart, Overlay } from './styles';
 import LeatherCoachBag from '../../../assets/Product/leather-coach-bag.png'
 import { Separator } from '../../Separator';
 import { OrderSummary } from '../OrderSummary';
-import { TextField } from '../../FormControl';
+import { useCart } from '../../../hooks/useCart';
+import { Text } from '../../Text';
+import ProductAlert from '../../../assets/Alerts/alert-product.png'
 
 export function ModalCart() {
+    const { cartItems } = useCart();
+    const cartQuantity = cartItems.length
+    
     return (
         <Dialog.Root >
     
@@ -23,6 +28,8 @@ export function ModalCart() {
 
             <div className="modal__container">
 
+               
+
             <CloseButton>
             <AppBar>
                 <ArrowRightIcon isFilled />
@@ -31,37 +38,53 @@ export function ModalCart() {
                 </Heading>
             </AppBar>
             </CloseButton>
-           {/* <p> Your cart is empty :/ </p> */}
-           <CartProduct 
-                withQuantity={false} 
-                withPrice={false} 
-                withStepper={true} 
-                src={LeatherCoachBag} 
-                withButton={false} 
-                productModel='Coach' 
-                productName='Leather Coach Bag' 
-                productValue='$54.69'
-            />
-
-            <CartProduct 
-                withQuantity={false} 
-                withPrice={false} 
-                withStepper={true} 
-                src={LeatherCoachBag} 
-                withButton={false} 
-                productModel='Coach' 
-                productName='Leather Coach Bag' 
-                productValue='$54.69'
-            />
-
-            <Separator />
             
-            <OrderSummary
-                withHeader={false}
-                withOrderPageText={false}
-                withOrderCart={true}
-                withOrderPageButtons={false}
-            />
+            
+            { cartQuantity <= 0 ? (
+                <EmptyCart>
+                <img src={ProductAlert} alt="Empty Cart" />
+                <Heading title='bold' size='large' color='dark'> Uh Oh....! </Heading>
+                <Text size='medium' color='dark' title='regular'> You haven’t added any any items. Start shopping to make your bag bloom </Text> 
+                </EmptyCart>
+                )
+                :
+                (
+                  
+                  cartItems.map(cartItem => (
+                        <CartProduct 
+                        key={cartItem._id}
+                        src={LeatherCoachBag} 
+                        withButton={false} 
+                        productModel={cartItem.model}
+                        productName={cartItem.name}
+                        productValue={cartItem.price}
+                        
+                        withQuantity={false} 
+                        withPrice={false} 
+                        withStepper={true} 
+                        /> 
+                    ))
+                    && (
+                 <>
+                <Separator />
+                
+                <OrderSummary
+                    withHeader={false}
+                    withOrderPageText={false}
+                    withOrderCart={true}
+                    withOrderPageButtons={false}
+                    withOrderHeaderDetails={false}
+                    withCartProduct={false}
+                />
+                </>
+                    )
+                )
+             }
+
+         
+        
+                   
+            
           
             </div>
         </Content>

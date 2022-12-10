@@ -2,12 +2,14 @@ import { Button } from "../../Button";
 import { Heading } from "../../Heading";
 import { Text } from "../../Text";
 import { Separator } from "../../Separator";
-import { Order, OrderButtons, OrderButtonsCart, OrderCart, OrderContainer, OrderHeader, OrderInformations, OrderText, OrderValue } from "./styles";
+import { Order, OrderButtons, OrderButtonsCart, OrderCart, OrderCartProduct, OrderContainer, OrderHeader, OrderHeaderDetails, OrderInformations, OrderText, OrderValue } from "./styles";
 import { useNavigate } from "react-router-dom";
 import { TextField } from "../../FormControl";
+import { CartProduct } from "../CartProduct";
+import PinkBag from '../../../assets/Product/pink-bag-small.svg'
 
 export interface OrderSummaryProps extends 
-    OrderHeaderProps, OrderPageTextProps, OrderCartProps, OrderButtonsCartProps, OrderPageButtonsProps {}
+    OrderHeaderProps, OrderPageTextProps, OrderCartProps, OrderButtonsCartProps, OrderPageButtonsProps, OrderCartProductProps, OrderHeaderDetailsProps {}
 
 export interface OrderHeaderProps {
     withHeader?: boolean;
@@ -27,7 +29,15 @@ export interface OrderButtonsCartProps {
     withOrderButtonsCart?: boolean;
 }
 
-export function OrderSummary({ withHeader, withOrderPageText, withOrderCart, withOrderButtonsCart, withOrderPageButtons }: OrderSummaryProps) {
+export interface OrderCartProductProps {
+    withCartProduct: boolean;
+}
+
+export interface OrderHeaderDetailsProps {
+    withOrderHeaderDetails: boolean;
+}
+
+export function OrderSummary({ withOrderHeaderDetails, withHeader,withCartProduct, withOrderPageText, withOrderCart, withOrderButtonsCart, withOrderPageButtons }: OrderSummaryProps) {
     const navigate = useNavigate()
     
     
@@ -35,12 +45,31 @@ export function OrderSummary({ withHeader, withOrderPageText, withOrderCart, wit
         <OrderContainer>
             <OrderInformations>
                 <OrderHeader withHeader={withHeader}>
-                    <Heading size='small' color="dark" title="medium">
+                    <Heading size='small' color="dark" title="regular">
                         Order Summary
                     </Heading>
                     <Separator/>
                 </OrderHeader>
+                <OrderCartProduct withCartProduct={withCartProduct}>
+                <CartProduct
+                    productModel="3232"
+                    productName="439843"
+                    productQuantity="1"
+                    productValue={39}
+                    withButton={false}
+                    withPrice={false}
+                    withStepper={false}
+                    src={PinkBag}
+                />
+                </OrderCartProduct>
+                <OrderHeaderDetails withOrderHeaderDetails={withOrderHeaderDetails}>
+                    <Heading size='small' color="dark" title="regular">
+                        Order Details
+                    </Heading>
+                    <Separator/>
+                </OrderHeaderDetails>
                 <Order withOrderPageText={withOrderPageText}>
+
                 <OrderText>
                 <Text color='lowEmphasis' size='large' title='medium'>
                         Sub Total
@@ -97,17 +126,17 @@ export function OrderSummary({ withHeader, withOrderPageText, withOrderCart, wit
                 </OrderCart>
             </OrderInformations>
             <OrderButtons withOrderPageButtons={withOrderPageButtons}>
-                <Button variant="primary" size="intermediary" >
+                <Button variant="primary" size="intermediary" onClick={() => navigate('/checkout')}>
                     Place Order
                 </Button>
-                <Button variant="outline" size="intermediary">
+                <Button variant="outline" size="intermediary" onClick={() => navigate('/')}>
                     Continue Shopping
                 </Button>
             </OrderButtons>
             
             <OrderButtonsCart withOrderButtonsCart={withOrderButtonsCart}>
             <TextField hasActionButton={true} actionLabel='CHECK' size="intermediary" text="Apply Coupon Code"/>
-            <Button variant="primary" size="large" onClick={() => navigate('/cart')}>
+            <Button variant="primary" size="large" onClick={() => navigate('/checkout')}>
                     Place Order
                 </Button>
                 <Text decoration="underline" color="primary" size="medium" title="regular" cursor="pointer" onClick={

@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CartPage } from "../pages/CartPage";
 import { CategoryPage } from "../pages/CategoryPage";
+import { CheckoutPage } from "../pages/CheckoutPage";
 import { Home } from "../pages/Home";
 import { PageNotFound } from "../pages/PageNotFound";
 import { ProductPage } from "../pages/ProductPage";
@@ -16,6 +17,7 @@ export function Router() {
                 <Route path='*' element={<PageNotFound/>}/>
 
                 <Route path='/cart' element={<CartPage />}/>
+                <Route path='/checkout' element={<CheckoutPage />}/>
             </Routes>
         </BrowserRouter>
     )

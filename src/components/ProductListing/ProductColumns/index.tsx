@@ -48,7 +48,7 @@ export function ProductColumns() {
                   />
              )) 
             }
-
+            
 
             {/* <ProductCard onClick={() => navigate('/product')} src={PinkBag} productModel='Grande' productValue='$39.49' productName='Blossom Pouch' withRating={true} withButton={false} withDiscount={true} withTrending={false}/>
             <ProductCard onClick={() => navigate('/product')} src={Remus} productModel='Remus' productValue='$57.00' productName='Brown Strap Bag' withRating={true} withButton={false} withDiscount={true} withTrending={false}/>
