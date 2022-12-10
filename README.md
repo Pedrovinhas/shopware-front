@@ -29,7 +29,7 @@
 
 ## 👩‍💻 Tecnologias
 
-![React](https://img.shields.io/badge/React-222?style=for-the-badge&logo=react&logoColor=blue)![Typescript](https://img.shields.io/badge/typescript-3178c6?style=for-the-badge&logo=typescript&logoColor=white)![Tailwind](https://img.shields.io/badge/Tailwind%20css-4DC0B5?style=for-the-badge&logo=tailwindcss&logoColor=white)![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)![Storybook](https://img.shields.io/badge/storybook-ff528c?style=for-the-badge&logo=storybook&logoColor=white)
+![React](https://img.shields.io/badge/React-222?style=for-the-badge&logo=react&logoColor=blue)![Typescript](https://img.shields.io/badge/typescript-3178c6?style=for-the-badge&logo=typescript&logoColor=white)![StyledComponents](https://img.shields.io/badge/styled%20components-121212?style=for-the-badge&logo=styled-components&logoColor=pink)![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)![Storybook](https://img.shields.io/badge/storybook-ff528c?style=for-the-badge&logo=storybook&logoColor=white)
 
 
 ### 📔 Bibliotecas
@@ -38,7 +38,9 @@
 | :---------- | :--------- |
 | [Storybook](https://storybook.js.org/) | Documentação do Design System do projeto e criação de componentes | 
 | [React-Router-DOM](https://v5.reactrouter.com/web/guides/quick-start) |  Navegação entre as páginas | 
-| [Radix](https://github.com/jquense/yup) | Para componentes acessíveis| 
+| [Radix](https://www.radix-ui.com/) | Para componentes acessíveis dentro do React| 
+| [Axios](https://axios-http.com/) | Para o consumo da API de produtos e CEP | 
+| [SwiperJS](https://swiperjs.com/react#styles) | Componente de Carrousel e Slider | 
 
 ## 📝 Requisitos funcionais
 
