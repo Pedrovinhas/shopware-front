@@ -5,6 +5,7 @@ import { CheckoutPage } from "../pages/CheckoutPage";
 import { Home } from "../pages/Home";
 import { PageNotFound } from "../pages/PageNotFound";
 import { ProductPage } from "../pages/ProductPage";
+import { UserPage } from "../pages/UserPage";
 
 export function Router() {
     return (
@@ -18,6 +19,7 @@ export function Router() {
 
                 <Route path='/cart' element={<CartPage />}/>
                 <Route path='/checkout' element={<CheckoutPage />}/>
+                <Route path='/user-profile' element={<UserPage />}/>
             </Routes>
         </BrowserRouter>
     )

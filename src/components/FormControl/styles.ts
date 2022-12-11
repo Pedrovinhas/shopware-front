@@ -21,6 +21,13 @@ export const TextFieldBox = styled.button<FormControlProps>`
         display: flex;
     `} 
 
+    ${(props) => props.size === 'full' && css`
+        width: 100%;
+        height: 3.25rem;
+
+        display: flex;
+    `} 
+
     ${(props) => props.size === 'intermediary' && css`
         width: 22.5rem;
         height: 3.5rem;
