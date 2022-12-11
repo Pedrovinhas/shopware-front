@@ -1,26 +1,33 @@
 import { Text } from "../../Text"
 import { ProductProps } from "../../../types/ProductProps"
-import { DetailsContainer } from "./styles"
+import { DetailsButton, DetailsContainer } from "./styles"
 
-export function CartDetails(props: ProductProps) {
+export interface CartDetailsProps extends ProductProps, DetailsButtonProps {   
+}
+
+export interface DetailsButtonProps {
+    withDetailsButton?: boolean;
+}
+
+export function CartDetails(props: CartDetailsProps) {
     return (
         <DetailsContainer>
         <div className="details__values">
-            <Text color='highEmphasis' size='medium' title='normal'>
-                    {props.productValue} 
+            <Text color='highEmphasis' size='medium' title='medium'>
+                    ${props.productValue} 
                 </Text>
 
-            <Text color='highEmphasis' size='medium' title='normal'>
+            <Text color='highEmphasis' size='medium' title='medium'>
                     1
             </Text>
             
-            <Text color='highEmphasis' size='medium' title='normal'>
+            <Text color='highEmphasis' size='medium' title='medium'>
                     {props.productValue} 
             </Text>
         </div>
           
 
-          <div className="details__buttons">
+          <DetailsButton withDetailsButton={props.withDetailsButton}> 
           <Text as='a' cursor="pointer" color='primary' size='medium' title='regular' decoration="underline">
                 Move to Wishlist
             </Text>
@@ -28,7 +35,7 @@ export function CartDetails(props: ProductProps) {
             <Text as='a' cursor="pointer" color='error' size='medium' title='regular' decoration="underline"> 
                 Remove
             </Text>
-          </div>
+          </DetailsButton>
         </DetailsContainer>
         
     )

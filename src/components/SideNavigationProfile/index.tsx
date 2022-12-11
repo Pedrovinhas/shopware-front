@@ -9,15 +9,16 @@ import { ToggleGroupRoot } from './styles';
 export interface NavigationItem {
     label?: string;
     children?: ReactNode;
+    defaultValue: string;
 }
 
-export function SideNavigationProfile({ label, children }: NavigationItem) {
+export function SideNavigationProfile({ defaultValue, label, children }: NavigationItem) {
     const navigate = useNavigate()
 
     return (
-        <ToggleGroupRoot defaultValue='Profile' type='single'>
+        <ToggleGroupRoot defaultValue={defaultValue} type='single'>
 
-            <ToggleGroup.Item value='Profile' onClick={() => navigate('/')} className='toggle-group__item'>
+            <ToggleGroup.Item value='Profile' onClick={() => navigate('/user-profile')} className='toggle-group__item'>
                 
                     <span className="border">
                     
@@ -31,7 +32,7 @@ export function SideNavigationProfile({ label, children }: NavigationItem) {
                 </div>
             </ToggleGroup.Item>
 
-            <ToggleGroup.Item value='Refer and Earn' onClick={() => navigate('/')} className='toggle-group__item'>
+            <ToggleGroup.Item value='Refer and Earn' onClick={() => navigate('*')} className='toggle-group__item'>
                 
                     <span className="border">
                     
@@ -45,7 +46,7 @@ export function SideNavigationProfile({ label, children }: NavigationItem) {
                 </div>
             </ToggleGroup.Item>
 
-            <ToggleGroup.Item value='My Orders' onClick={() => navigate('/')} className='toggle-group__item'>
+            <ToggleGroup.Item value='My Orders' onClick={() => navigate('/user-profile/my-orders')} className='toggle-group__item'>
                 
                     <span className="border">
                     

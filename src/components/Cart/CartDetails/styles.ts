@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { DetailsButtonProps } from ".";
 
 export const DetailsContainer = styled.div`
     display: flex;
@@ -21,4 +22,20 @@ export const DetailsContainer = styled.div`
         display: flex;
         gap: 52px;
     }
+`
+
+export const DetailsButton = styled.div<DetailsButtonProps>`
+        display: flex;
+        gap: 52px;
+
+        ${(props) => props.withDetailsButton === true && css`
+            display: flex;
+            gap: 52px;
+
+        `} 
+
+        ${(props) => props.withDetailsButton === false && css`
+            display: none;
+
+        `} 
 `

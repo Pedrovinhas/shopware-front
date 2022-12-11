@@ -36,7 +36,7 @@ export function UserPage() {
             </HeadingContainer>
 
             <UserSection>
-                <SideNavigationProfile/>
+                <SideNavigationProfile defaultValue="Profile"/>
                 <ProfileSection/>
             </UserSection>
         

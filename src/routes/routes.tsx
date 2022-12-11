@@ -3,6 +3,8 @@ import { CartPage } from "../pages/CartPage";
 import { CategoryPage } from "../pages/CategoryPage";
 import { CheckoutPage } from "../pages/CheckoutPage";
 import { Home } from "../pages/Home";
+import { OrderDetailPage } from "../pages/OrderDetailPage";
+import { OrdersPage } from "../pages/OrdersPage";
 import { PageNotFound } from "../pages/PageNotFound";
 import { ProductPage } from "../pages/ProductPage";
 import { UserPage } from "../pages/UserPage";
@@ -20,6 +22,9 @@ export function Router() {
                 <Route path='/cart' element={<CartPage />}/>
                 <Route path='/checkout' element={<CheckoutPage />}/>
                 <Route path='/user-profile' element={<UserPage />}/>
+                <Route path='/user-profile/my-orders' element={<OrdersPage />}/>
+                {/* <Route path='/user-profile/my-orders/:orderId' element={<OrderDetailPage/>}/> */}
+                <Route path='/user-profile/my-orders/orderId' element={<OrderDetailPage/>}/>
             </Routes>
         </BrowserRouter>
     )

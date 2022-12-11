@@ -2,7 +2,7 @@ import * as Tabs from '@radix-ui/react-tabs';
 import styled from 'styled-components';
 
 export const TabsRoot = styled(Tabs.Root)`
-    width: 100%;
+    width: 1000px;
     gap: 24px;
   
 `
@@ -23,6 +23,8 @@ export const TabsContent = styled(Tabs.Content)`
     display: flex;
     gap: 20px;
     flex-direction: column;
+    align-items: center;
+  
 
     position: absolute;
 
