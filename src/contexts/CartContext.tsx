@@ -4,6 +4,8 @@ import { Product } from "../types/Product";
 interface CartContextData {
     cartItems: Product[];
     addToCart: (product: Product) => void;
+    removeCartItem: (productId : string) => void;
+    cartTotal: number
     // validateIfItemAlreadyExists: (productId : string) => boolean
 }
 
@@ -18,14 +20,24 @@ export function CartContextProvider( { children }: CartContextProviderProps) {
 
     function addToCart(product: Product) {
         setCartItems((prevState) => [...prevState, product] )
+      
+        
     }
 
-    // function validateIfItemAlreadyExists(productId: string) {
-    //     return cartItems.some((product) => product._id === productId)
-    // }
+    const cartTotal = cartItems.reduce((total, product) => {
+        return total + product.price
+    }, 0)
+
+    function removeCartItem(productId: string) {
+        setCartItems((state) => state.filter((item) => item._id != productId))
+    }
+
+    function validateIfItemAlreadyExists(productId: string) {
+        return cartItems.some((product) => product._id === productId)
+    }
 
     return (
-        <CartContext.Provider value={{ cartItems, addToCart }}>
+        <CartContext.Provider value={{ cartItems, addToCart, removeCartItem, cartTotal }}>
             { children }
         </CartContext.Provider>
     )
