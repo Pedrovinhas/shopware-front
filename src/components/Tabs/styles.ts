@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import * as ToggleGroup from '@radix-ui/react-toggle-group';
-import { Link } from "react-router-dom";
 
 export const TabsContainer = styled.div`
     display: flex;
@@ -8,7 +7,7 @@ export const TabsContainer = styled.div`
 
     .tab-next {
         width: 67px;
-        height: 100%;
+        height: 38px;
 
         background-color: ${props => props.theme.colors.grey};
 
@@ -49,7 +48,7 @@ export const ToggleGroupItem = styled(ToggleGroup.Item)`
 
     &[data-state='on'] {
        
-        a {
+        span {
             background-color: ${props => props.theme.colors.primary};
             color: ${props => props.theme.colors.bright};
         }
@@ -61,7 +60,7 @@ export const ToggleGroupItem = styled(ToggleGroup.Item)`
 
 `
 
-export const TabLink = styled(Link)`
+export const TabLink = styled.span`
     background-color: ${props => props.theme.colors.grey};
     color: ${props => props.theme.colors.lowEmphasis};
 

@@ -23,6 +23,10 @@ export const StyledHeading = styled.h1<HeadingProps>`
         font-size: ${props => props.theme.fontSizes["2xl"]};
     `} 
 
+    ${(props) => props.size === 'midsmall' && css`
+        font-size: ${props => props.theme.fontSizes["2xlg"]};
+    `} 
+
     ${(props) => props.size === 'small' && css`
         font-size: ${props => props.theme.fontSizes["xl"]};
     `} 

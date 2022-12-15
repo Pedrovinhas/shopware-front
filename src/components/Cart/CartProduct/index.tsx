@@ -13,6 +13,7 @@ export interface CartProductProps extends
         productName?: string;
         productValue?: number;
         productQuantity?: string;
+        onClick?: () => void;
         
     }
 
@@ -34,12 +35,12 @@ export interface ButtonCartProps {
 
 
 export interface CardImageProps {
-    src: string;
+    src: string | undefined;
 }
 
 
 
-export function CartProduct({withStepper, withQuantity, productModel, productName, productValue, productQuantity, src, withButton, withPrice }: CartProductProps) {
+export function CartProduct({onClick, withStepper, withQuantity, productModel, productName, productValue, productQuantity, src, withButton, withPrice }: CartProductProps) {
     return (
         <VerticalContainer>
             <CardImage src={src} />
@@ -49,9 +50,9 @@ export function CartProduct({withStepper, withQuantity, productModel, productNam
                         <Text size='large' color="highEmphasis" title="medium">
                             {productModel}
                         </Text>
-                        <p>
+                        <strong onClick={onClick} >
                             X
-                        </p>
+                        </strong>
                     </CardCartProductText>
                     
                     <Text size='medium' color="lowEmphasis" title='normal' >

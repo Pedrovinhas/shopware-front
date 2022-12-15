@@ -5,11 +5,13 @@ import { Separator } from "../../Separator";
 import { Order, OrderButtons, OrderButtonsCart, OrderCart, OrderCartProduct, OrderContainer, OrderHeader, OrderHeaderDetails, OrderInformations, OrderText, OrderValue } from "./styles";
 import { useNavigate } from "react-router-dom";
 import { TextField } from "../../FormControl";
-import { CartProduct } from "../CartProduct";
+import { CartProduct, CartProductProps } from "../CartProduct";
 import PinkBag from '../../../assets/Product/pink-bag-small.svg'
+import { Product } from "../../../types/Product";
+import { useCart } from "../../../hooks/useCart";
 
 export interface OrderSummaryProps extends 
-    OrderHeaderProps, OrderPageTextProps, OrderCartProps, OrderButtonsCartProps, OrderPageButtonsProps, OrderCartProductProps, OrderHeaderDetailsProps {}
+    OrderHeaderProps, OrderPageTextProps, OrderCartProps, ICartItemsProps, OrderButtonsCartProps, OrderPageButtonsProps, OrderCartProductProps, OrderHeaderDetailsProps {}
 
 export interface OrderHeaderProps {
     withHeader?: boolean;
@@ -37,10 +39,20 @@ export interface OrderHeaderDetailsProps {
     withOrderHeaderDetails: boolean;
 }
 
-export function OrderSummary({ withOrderHeaderDetails, withHeader,withCartProduct, withOrderPageText, withOrderCart, withOrderButtonsCart, withOrderPageButtons }: OrderSummaryProps) {
+interface ICartItemsProps {
+    ICartItem?: Product | undefined;
+    cartSubtotal?: number ;
+}
+
+export function OrderSummary({ cartSubtotal, ICartItem, withOrderHeaderDetails, withHeader,withCartProduct, withOrderPageText, withOrderCart, withOrderButtonsCart, withOrderPageButtons }: OrderSummaryProps) {
+    const { cartTotal, cartItems } = useCart();
+    
     const navigate = useNavigate()
-    
-    
+    // const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]') 
+
+    console.log(cartItems);
+
+    const imageURL = 'http://localhost:3003/uploads/'
     return (
         <OrderContainer>
             <OrderInformations>
@@ -51,16 +63,46 @@ export function OrderSummary({ withOrderHeaderDetails, withHeader,withCartProduc
                     <Separator/>
                 </OrderHeader>
                 <OrderCartProduct withCartProduct={withCartProduct}>
-                <CartProduct
-                    productModel="3232"
-                    productName="439843"
-                    productQuantity="1"
-                    productValue={39}
-                    withButton={false}
-                    withPrice={false}
-                    withStepper={false}
-                    src={PinkBag}
-                />
+                {
+                    cartItems.length === 0 ? (
+                        <h1> Não há nada aqui </h1>
+                    ) : (
+                        <>
+                        {
+                    // cartItems.map((cartItem: typeof ICartItem ) => (
+                    //     <CartProduct 
+                    //     key={cartItem?._id}
+                    //     src={imageURL + cartItem?.imagePath == imageURL ?  cartItem?.imageUrl : imageURL + cartItem?.imagePath } 
+                    //     withButton={false} 
+                    //     productModel={cartItem?.model}
+                    //     productName={cartItem?.name}
+                    //     productValue={cartItem?.price}
+                        
+                    //     withQuantity={false} 
+                    //     withPrice={false} 
+                    //     withStepper={false} 
+                    //     /> 
+                    // ))
+
+                    cartItems.map(cartItem => (
+                        <CartProduct 
+                        key={cartItem?._id}
+                        src={imageURL + cartItem?.imagePath == imageURL ?  cartItem?.imageUrl : imageURL + cartItem?.imagePath } 
+                        withButton={false} 
+                        productModel={cartItem?.model}
+                        productName={cartItem?.name}
+                        productValue={cartItem?.price}
+                        
+                        withQuantity={false} 
+                        withPrice={false} 
+                        withStepper={false} 
+                        /> 
+                    ))
+                }
+                        </>
+                    )
+                }
+                
                 </OrderCartProduct>
                 <OrderHeaderDetails withOrderHeaderDetails={withOrderHeaderDetails}>
                     <Heading size='small' color="dark" title="regular">
@@ -86,7 +128,7 @@ export function OrderSummary({ withOrderHeaderDetails, withHeader,withCartProduc
                 </OrderText>
                 <OrderValue>
                 <Text color='highEmphasis' size='large' title='regular'>
-                      $119.69
+                        {cartTotal}
                     </Text>
                     <Text color='highEmphasis' size='large' title='regular'>
                     -$13.40
@@ -114,13 +156,13 @@ export function OrderSummary({ withOrderHeaderDetails, withHeader,withCartProduc
                 </OrderText>
                 <OrderValue>
                 <Text color='highEmphasis' size='medium' title='normal'>
-                      $109.38
+                      {cartSubtotal}
                     </Text>
                     <Text color='highEmphasis' size='medium' title='normal'>
                     $2.00
                     </Text>
                     <Text color='highEmphasis' size='medium' title='regular'>
-                    $111.38
+                    {cartSubtotal}
                     </Text>
                 </OrderValue>
                 </OrderCart>

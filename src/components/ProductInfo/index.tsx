@@ -39,7 +39,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
                     {product.model}
                 </Heading>
                 <Heading as='h2' color="lowEmphasis" size="small" title="regular">
-                    {product.name} with adjustable starps.
+                    {product.name} with adjustable straps.
                 </Heading>
             </div>
             <DivRating>
@@ -162,14 +162,14 @@ export function ProductInfo({ product }: ProductInfoProps) {
         </DeliveryInfoSection>
 
         <div className="mobile__accordions">
-            <Accordian text='Product Description' withPadding={false} withSeparator={false} size='medium'>
+            <Accordian type='single' text='Product Description' withPadding={false} withSeparator={false} size='medium'>
                 <Text color="lowEmphasis" size="medium" title='medium'>
                 Experience comfortable and easy travelling like never before with this coach bag.
                  It features a zip closure, removable straps and multiple organization compartments 
                  to keep your valuables safe. Crafted from premium material, it is durable and lasts long.
                 </Text>
             </Accordian>
-            <Accordian text='Ratings & Reviews' withPadding={false} withSeparator={false} size='medium'>
+            <Accordian type='single' text='Ratings & Reviews' withPadding={false} withSeparator={false} size='medium'>
                 <Text color="lowEmphasis" size="medium" title='medium'>
                 Experience comfortable and easy travelling like never before with this coach bag.
                  It features a zip closure, removable straps and multiple organization compartments 

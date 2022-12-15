@@ -6,7 +6,7 @@ export const OrderContainer = styled.div`
     flex-direction: column;
 
     width: 411px;
-    height: 273px;
+    min-height: 273px;
     gap: 40px;
 
 `

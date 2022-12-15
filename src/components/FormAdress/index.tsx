@@ -3,6 +3,7 @@ import { Text } from "../Text";
 import { TextField } from "../FormControl";
 import React, { useEffect, useState } from "react";
 import { cepApi } from "../../services/cepApi";
+import { useAuth } from "../../hooks/useAuth";
 
 interface userAdress {
     street: string;
@@ -11,10 +12,10 @@ interface userAdress {
 }
 
 export function FormAdress() {
-
+    const { user } = useAuth()
     const [pinCode, setPinCode] = useState<string>('')
     const [ userAdress, setUserAdress ] = useState<userAdress>()
- 
+    console.log(user, 'oi')
     const handlePinCodeInput = (e:React.ChangeEvent<HTMLInputElement>) => {
 
         if(e.target.value?.length !== 8) {

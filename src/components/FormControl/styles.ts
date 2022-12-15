@@ -10,7 +10,7 @@ export const TextFieldBox = styled.button<FormControlProps>`
      
 
     ${(props) => props.size === 'small' && css`
-        width: 3.5rem;
+        width: 3.8rem;
         height: 3.5rem;
     `} 
 

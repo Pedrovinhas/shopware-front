@@ -59,6 +59,12 @@ export const StyledButton = styled.button<ButtonProps>`
 
     `}
 
+    ${(props) => props.size === 'full' && css`
+        width: 100%;
+        height:2.75rem;
+
+    `}
+
     ${(props) => props.variant === 'primary' && css`
 
     color: ${props => props.theme.colors.bright};

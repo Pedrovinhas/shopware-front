@@ -2,7 +2,7 @@ import { ElementType, ReactNode } from "react";
 import { StyledHeading } from "./styles";
 
 export interface HeadingProps {
-    size: 'midlarge'| 'ultralarge' | 'extralarge' | 'large' | 'medium' | 'small';
+    size: 'midlarge'| 'ultralarge' | 'extralarge' | 'large' | 'medium' | 'small' | 'midsmall';
     title: 'medium' | 'regular' | 'bold' | 'strong';
     color: 'primary' | 'highEmphasis' | 'lowEmphasis' | 'bright' | 'brown' | 'dark' | 'lightText' | 'vibrant';
     decoration?: 'line-through'

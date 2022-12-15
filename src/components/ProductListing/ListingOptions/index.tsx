@@ -21,7 +21,7 @@ export function ListingOptions() {
             setProducts(data)
             console.log(data)
           })
-      }, [])
+      }, [categoryId])
 
       
       
@@ -43,9 +43,6 @@ export function ListingOptions() {
                 </ToggleGroupRoot>
                 <Text color='highEmphasis' title="medium" size="large">
                    Showing 1 - {products.length} of {products.length} items 
-                   {/* 
-                    */}
-                   {/* Passar por props com a quantidade de itens do Array de Objetos de Produtos */}
                 </Text>
             </PageLayout>
             <SortOptions>

@@ -6,8 +6,8 @@ export const ListingContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     
-    height: 56px;
-    width: 100%;
+    height: 3.5rem;
+    width: 57.25rem;
 `
 
 export const PageLayout = styled.div`

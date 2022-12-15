@@ -16,6 +16,10 @@ export interface TabProps {
     value: string;
 }
 
+export interface BottomNavigationProps {
+    defaultValue?: string;
+}
+
 export function Tab({ children, value }: TabProps) {
     return (
         <BottomTab value={value}>
@@ -24,13 +28,13 @@ export function Tab({ children, value }: TabProps) {
     )
 }
 
-export function BottomNavigation() {
+export function BottomNavigation({defaultValue}: BottomNavigationProps) {
     const navigate = useNavigate()
     return (
-        <TabsRoot defaultValue="1" orientation="vertical">
+        <TabsRoot defaultValue={defaultValue} orientation="vertical">
             <TabsList aria-label="Bottom Navigation">
                 
-            <BottomTab value='1'> 
+            <BottomTab value='1' onClick={() => navigate('/')}> 
                     <span className="icon__home">
                     <HomeIcon isFilled={false}/>
                     </span>
@@ -54,7 +58,7 @@ export function BottomNavigation() {
                 </BottomTab>
 
 
-                <BottomTab value='3'> 
+                <BottomTab value='3' onClick={() => navigate('/user-profile')}> 
                     <span className="icon__profile">
                     <ProfileIcon isFilled/>
                     </span>

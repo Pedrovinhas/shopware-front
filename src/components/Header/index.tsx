@@ -27,7 +27,6 @@ export function Header(props: HeaderProps) {
         api.get(`/categories`)
           .then(({ data }) => {
             setCategories(data)
-            console.log(data)
           })
       }, [])
 
@@ -43,21 +42,19 @@ export function Header(props: HeaderProps) {
                     {
                     categories.map((category) => (
                         <Text 
+                        key={category._id}
                         cursor="pointer" 
                         color="highEmphasis" 
                         title="medium" 
                         size="medium" 
-                        onClick={() => navigate(`/categories/${category._id}/products`)}>
+                        onClick={() => navigate(`/categories/${category._id}/products`)}
+                        >
                             {category.name}
                         </Text>
                     )) 
                     }
 
-                    {/* <Text cursor="pointer" color="highEmphasis" title="medium" size="medium" as='a' onClick={() => navigate('/categories/6388e6002aca14a914b6089b/products')}>Handbags</Text>
-                    <Text  cursor="pointer" color="highEmphasis" title="medium" size="medium" onClick={() => navigate('/categories/638a3f3c7e83d66356c9955c/products')} >Watches</Text>
-                    <Text  cursor="pointer" color="highEmphasis" title="medium" size="medium" onClick={() => navigate('/categories/6388e6672aca14a914b6089d/products')}>Skincare</Text>
-                    <Text  cursor="pointer" color="highEmphasis" title="medium" size="medium" onClick={() => navigate('*')}>Jewellery</Text>
-                    <Text  cursor="pointer" color="highEmphasis" title="medium" size="medium" onClick={() => navigate('*')}>Apparels</Text> */}
+                    {/* <Text  cursor="pointer" color="highEmphasis" title="medium" size="medium" onClick={() => navigate('*')}>Apparels</Text> */}
                 </StyledNavDiv>
             </StyledNavLeft>
 
@@ -72,16 +69,15 @@ export function Header(props: HeaderProps) {
                 <SearchBar/>
                 <StyledNavIconsDiv>
                     <div className='desktop-icons'>
-                    <WishlistIcon isFilled={false}/>
-                    <ProfileIcon isFilled/>
-                    <ModalCart/>
+                    <WishlistIcon isFilled={false} cursor='pointer' onClick={() => navigate('/user-profile/wishlist')}/>
+                    <ProfileIcon isFilled cursor='pointer' onClick={() => navigate('/user-profile')}/>
+                    <ModalCart />
                     </div>
 
                     <div className='mobile-icons'>
                          <AddHomeIcon isFilled/>
                         <SearchIcon/>
                         <NotificationIcon isFilled/>
-                       
                     </div>
                 </StyledNavIconsDiv>
             </StyledNavRight>

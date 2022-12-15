@@ -13,9 +13,12 @@ import { Text } from '../../Text';
 import ProductAlert from '../../../assets/Alerts/alert-product.png'
 
 export function ModalCart() {
-    const { cartItems } = useCart();
+    const imageURL = 'http://localhost:3003/uploads/'
+    const { cartItems, removeCartItem, cartTotal } = useCart();
     const cartQuantity = cartItems.length
-    
+    console.log(cartItems)
+
+
     return (
         <Dialog.Root >
     
@@ -39,7 +42,7 @@ export function ModalCart() {
             </AppBar>
             </CloseButton>
             
-            
+            <>
             { cartQuantity <= 0 ? (
                 <EmptyCart>
                 <img src={ProductAlert} alt="Empty Cart" />
@@ -49,41 +52,41 @@ export function ModalCart() {
                 )
                 :
                 (
-                  
+                <div>
+                    {
                   cartItems.map(cartItem => (
                         <CartProduct 
                         key={cartItem._id}
-                        src={LeatherCoachBag} 
+                        src={imageURL + cartItem.imagePath == imageURL ?  cartItem.imageUrl : imageURL + cartItem.imagePath } 
                         withButton={false} 
                         productModel={cartItem.model}
                         productName={cartItem.name}
                         productValue={cartItem.price}
+                        onClick={() => removeCartItem(cartItem._id!)}
                         
                         withQuantity={false} 
                         withPrice={false} 
                         withStepper={true} 
                         /> 
-                    ))
-                    && (
-                 <>
-                <Separator />
-                
-                <OrderSummary
+                    ))}
+                    <Separator/>
+                    <OrderSummary
                     withHeader={false}
                     withOrderPageText={false}
                     withOrderCart={true}
                     withOrderPageButtons={false}
                     withOrderHeaderDetails={false}
                     withCartProduct={false}
+
+                    cartSubtotal={cartTotal}
                 />
-                </>
-                    )
+                    </div>
                 )
              }
 
          
         
-                   
+    </>
             
           
             </div>

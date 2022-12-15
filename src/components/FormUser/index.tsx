@@ -3,13 +3,21 @@ import { Text  } from "../Text";
 import { TextField } from "../FormControl";
 import { Separator } from "../Separator";
 import { Button } from "../Button";
+import { useAuth } from "../../hooks/useAuth";
 
 export function FormUser() {
+    const { user } = useAuth()
+
+    console.log(user, 'ta completoo')
+    
+    const userInformations = JSON.parse(localStorage.getItem('user') as string)
+    console.log(userInformations)
+    
+    console.log(user)
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
     }
-
 
     return (
         <Form onSubmit={handleSubmit}>
@@ -18,6 +26,8 @@ export function FormUser() {
                 <div className="label__text">
                     <Text as='label' size='large' color='highEmphasis' title='medium'>
                         First Name
+                        {user?.name} 
+                        
                     </Text>
                     <TextField text="John" size="medium"  />
                 </div>
@@ -26,8 +36,10 @@ export function FormUser() {
                         Last Name
                     </Text>
                     <TextField text="John" size="medium"  />
+                    
                 </div>
             </div>
+
 
             <div className="label__email">
                 <Text as='label' size='large' color='highEmphasis' title='medium'>

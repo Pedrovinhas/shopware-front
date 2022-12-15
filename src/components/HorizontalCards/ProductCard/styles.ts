@@ -33,6 +33,7 @@ export const CardImageContainer = styled.div<CardImageProps>`
     border-radius: ${props => props.theme.radii.base};
     height: 17.875rem;
     background-image: url(${props => props.src});
+    background-repeat: no-repeat;
     
     display: flex;
     justify-content: flex-end;

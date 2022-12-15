@@ -6,12 +6,13 @@ export interface CheckboxProps {
     icon: ReactNode;
     text: ReactNode;
     disabled?: boolean;
+    value?: string;
 }
 
-export function CheckboxButton({ icon, text, disabled=false}: CheckboxProps) {
+export function CheckboxButton({ icon, text, disabled=false, value}: CheckboxProps) {
     return (
         <Box>
-        <CheckBoxRoot disabled={disabled}>
+        <CheckBoxRoot disabled={disabled} value={value} >
             <Checkbox.CheckboxIndicator>
                 {icon}
             </Checkbox.CheckboxIndicator>

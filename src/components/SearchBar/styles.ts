@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const TextInputContainer = styled.div`
+export const TextInputContainer = styled.form`
 
     width: 22.625rem;
     height: 44px;

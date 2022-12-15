@@ -13,6 +13,11 @@ export const ToggleGroupRoot = styled(ToggleGroup.Root)`
     flex-direction: column;
 
    border-radius: 8px;
+
+    @media (max-width: 740px) {
+        width: 328px;
+        height: 420px;
+    }
    
     .toggle-group__item {
         display: flex;
@@ -47,6 +52,10 @@ export const ToggleGroupRoot = styled(ToggleGroup.Root)`
 
                 border-radius: 8px;
                 display: block;
+
+                @media (max-width: 740px) {
+                    display: none;
+                }
     
             }   
 

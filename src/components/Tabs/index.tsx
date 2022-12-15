@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
 import { TabLink, TabsContainer, ToggleGroupItem, ToggleGroupRoot } from "./styles"
 
-export function Tabs() {
-    const [pageValue, setPageValue] = useState('1')
+export interface TabsProps {
+    onClick: () => void;
+}
+
+export function Tabs({ onClick }: TabsProps) {
 
     return (
         <TabsContainer>
@@ -11,7 +15,7 @@ export function Tabs() {
          className='filter-icons'
          defaultValue='1'
         >
-         <ToggleGroupItem value={pageValue}>
+         <ToggleGroupItem value='1'>
            <Tab label="1"/>
         </ToggleGroupItem>
 
@@ -33,7 +37,7 @@ export function Tabs() {
         
      </ToggleGroupRoot>
 
-     <span className='tab-next' onClick={() => {setPageValue(pageValue + 1)}}   >
+     <span className='tab-next' onClick={onClick}>
      <Tab label='Next'/>
      </span>
 
@@ -47,8 +51,9 @@ export interface TabProps {
 
 function Tab({ label }: TabProps) {
     return (
-        <TabLink to='/'>
+        <TabLink >
             {label}
         </TabLink>
     )
 }
+

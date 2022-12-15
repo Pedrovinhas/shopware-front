@@ -68,6 +68,10 @@ export const CardCartProductText = styled.div`
     justify-content: space-between;
     align-items: center;
 
+    strong {
+        cursor: pointer;
+    }
+
 `
 
 export const ButtonCartContainer = styled.div<ButtonCartProps>`
