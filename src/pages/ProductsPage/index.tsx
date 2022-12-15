@@ -18,62 +18,44 @@ import { api } from "../../services/api";
 import { Product } from "../../types/Product";
 import { SkeletonLoading } from "../../components/SkeletonLoading";
 
-export function CategoryPage() {
+export function ProductsPage() {
     const navigate = useNavigate()
 
     const { categoryId } = useParams();
     const [products, setProducts] = useState<Product[]>()
     const [category, setCategory] = useState('')
-    const [isLoading, setIsLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const [categories, setCategories] = useState<Product[]>([])
-    
-    useEffect(() => {
-        Promise.all([
-            api.get(`/categories/${categoryId}/products`),
-            api.get(`/categories`),
-        ]).then(([categoriesResponse, productsResponse]) => {
-            setCategories(categoriesResponse.data)
-            console.log(categoriesResponse.data)
-            setProducts(productsResponse.data)
 
-            setIsLoading(false)
+    useEffect(() => {
+      api.get('/products')
+        .then(({ data }) => {
+          setProducts(data)
         })
     }, [])
 
-
-    // useEffect(() => {
-    //   api.get('/products')
-    //     .then(({ data }) => {
-    //         setIsLoading(true)
-    //       setProducts(data)
-    //     })
-    // }, [])
-
-    // const fetchCategories = async () => {
-    //     setIsLoading(true)
-    //     const { data } = await api.get(`/categories`)
-    //     setCategories(data)
-    //     console.log(data)
-    // }
+    const fetchCategories = async () => {
+        setLoading(true);
+        const { data } = await api.get(`/categories`)
+        setCategories(data)
+    }
     
     
 
-    // const fetchProducts = async () => {
-    //     setIsLoading(true)
-    //     const { data } = await api.get(`/categories/${categoryId}/products`)
-    //     setProducts(data)
+    const fetchProducts = async () => {
+        setLoading(true);
+        const { data } = await api.get(`/categories/${categoryId}/products`)
+        setProducts(data)
 
         
-    // }
+    }
 
-    // useEffect(() => {
-    //     fetchProducts()
-    //     fetchCategories()
-    //     setIsLoading(false);
-    // }, [])
-
-    const filteredCategory = products?.filter((category) => category._id === categoryId)
+    useEffect(() => {
+        fetchProducts()
+        fetchCategories()
+        setLoading(false);
+    }, [])
 
 
         if(!products) {
@@ -93,13 +75,13 @@ export function CategoryPage() {
                  <ChevronRightSmallIcon isFilled/>
                  <Text color="lowEmphasis" size="medium" title="medium">
                  
-                   {filteredCategory === undefined ? 'All' : filteredCategory[0].name} 
+                   All
                  
                  </Text>
              </Breadcrumbs>
              
              <Heading color="primary" size="medium" title="bold" >
-             {filteredCategory === undefined ? 'All' : filteredCategory[0].name} 
+                All
              </Heading>
  
              <AlignContainer>
@@ -115,7 +97,7 @@ export function CategoryPage() {
              <AppBar>
                  <ChevronLeftIcon isFilled cursor='pointer' onClick={() => navigate('/')}/>
                  <Heading size='small' color='primary' title='regular'>
-                 {categoryId}
+                 All
                  </Heading>
              </AppBar>
  

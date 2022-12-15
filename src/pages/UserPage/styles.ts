@@ -1,10 +1,27 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-    margin-left: 1.25rem;
 
-    display: flex;
-    flex-direction: column;
+
+export const ContainerResponsive = styled.div`
+    
+    .desktop__container {
+         display: block;
+        @media (max-width: 740px) {
+            display: none;
+        }
+    }
+`
+
+export const Container = styled.div`
+    display: none;
+
+    @media (min-width: 740px) {
+
+        margin-left: 1.25rem;
+    
+        display: flex;
+        flex-direction: column;
+    }
 
 `
 
@@ -20,4 +37,27 @@ export const UserSection = styled.div`
 
     display: flex;
     gap: 1.375rem;
+`
+
+export const MobileSection = styled.div`
+    display: none;
+
+    @media (max-width: 740px) {
+        display: flex;
+        flex-direction: column;
+
+        gap: 16px;
+
+        .side-navigation {
+            margin-left: 16px;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 40px;
+
+            padding-bottom: 65px;
+        }
+    }
+
 `

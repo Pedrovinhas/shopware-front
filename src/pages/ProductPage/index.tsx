@@ -17,7 +17,7 @@ import { Product } from "../../types/Product";
 import { SkeletonLoading } from "../../components/SkeletonLoading";
 
 export function ProductPage() {
-    const { productId } = useParams();
+    const { productId, categoryId } = useParams();
     const navigate = useNavigate()
     const imageURL = 'http://localhost:3003/uploads/'
 
@@ -50,7 +50,7 @@ export function ProductPage() {
                     <ChevronRightSmallIcon isFilled/>
                     <Text color="primary" size="medium" title="medium"
                         onClick={
-                            () => navigate(`/category`)
+                            () => navigate(`/category/${categoryId}`)
                     }>
                        {product?.category?.name}
                     </Text>
