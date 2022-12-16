@@ -62,13 +62,22 @@
   - [X] 404
 
 - [X] **Funcionalidades**
-  - [X] Storybook
+  - [X] Conventional Commits
+  - [X] Botões levando para páginas corretas  
+  - [X] Storybook com todos os componentes
   - [X] Contexto de Cart
   - [X] Contexto de Usuário
   - [X] Autenticação do usuário com:
-   - [X] Email e Senha
-   - [X] Telefone e OTP
+    - [X] Email e Senha
+    - [X] Telefone e OTP
   - [X] Máscara nos inputs
+  - [X] Páginas vazias retornando mensagens respectivas
+  - [X] Funcionalidades de perfil de usuário
+  - [X] Paginação
+  - [X] Consumo da API
+  - [X] Deploy na Vercel
+  
+  
 ## 📚 Como rodar o Storybook
 
 ```bash
