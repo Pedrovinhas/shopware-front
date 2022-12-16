@@ -108,28 +108,64 @@ export const WishContainer = styled.div`
             gap: 20px;
         }
 
-        .text__content {
-        margin-top: 48px;
+    .text__content {
+        margin-top: 20px;
+    
+        gap: 30px;
+    
+
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        gap: 30px;
+ 
 
         @media (min-width: 740px) {
+        
             margin-top: 0;
 
-            margin-top: -20px;
+            
+
+            }
+
+        .ul__information {
+            width: 324px;
+            height: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            
+            ul {
+                display: flex;
+                flex-direction: column;
+
+                gap: 4px;
+                li {
+                    color: ${props => props.theme.colors.lowEmphasis};
+                }
+            }
         }
-        
+
         .inf__content {
             width: 285px;
-            height: 36px;
+         
+
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 16px;
             text-align: center;
+
+            .code {
+                width: 240px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px dashed ${props => props.theme.colors.primary};
+
+                border-radius: 8px;
+            }
+
         }
     }
 

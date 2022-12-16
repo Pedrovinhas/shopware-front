@@ -27,7 +27,7 @@
 
 [![Figma](https://img.shields.io/badge/acessar%20layout%20no%20figma-222222?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/file/DqSemG9Z09LG9cAf8L8nUm/keepalive)
 
-## 👩‍💻 Tecnologias
+## ⚙ Tecnologias
 
 ![React](https://img.shields.io/badge/React-222?style=for-the-badge&logo=react&logoColor=blue)![Typescript](https://img.shields.io/badge/typescript-3178c6?style=for-the-badge&logo=typescript&logoColor=white)![StyledComponents](https://img.shields.io/badge/styled%20components-121212?style=for-the-badge&logo=styled-components&logoColor=pink)![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)![Storybook](https://img.shields.io/badge/storybook-ff528c?style=for-the-badge&logo=storybook&logoColor=white)
 
@@ -44,19 +44,31 @@
 
 ## 📝 Requisitos funcionais
 
-### ✔ Funcionalidades
+### ✔ Requisitos
 
-- [X] Telas
+- [X] **Telas**
+  - [X] Login
+  - [X] SignUp -> Telefone ou Email e Senha
   - [X] Home
   - [X] Category
   - [X] Products
+  - [X] Product 
+  - [X] Checkout
+  - [X] Cart
+  - [X] Order
+  - [X] User
+  - [X] Wishlist
+  - [X] About
   - [X] 404
 
-- [X] To Do
-  - [X] Ajeitar tamanho do banner
-  - [X] Slider e Carroussel
-  - [X] Stepper
-
+- [X] **Funcionalidades**
+  - [X] Storybook
+  - [X] Contexto de Cart
+  - [X] Contexto de Usuário
+  - [X] Autenticação do usuário com:
+   - [X] Email e Senha
+   - [X] Telefone e OTP
+  - [X] Máscara nos inputs
 ## 📚 Como rodar o Storybook
 
 ```bash

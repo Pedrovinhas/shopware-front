@@ -29,6 +29,10 @@ export const CategoriesContainer = styled.section`
         .mobile__categories {
             display: flex;
             flex-direction: column;
+
+            .margin__container {
+                margin-bottom: 48px;
+            }
         }
     }
 

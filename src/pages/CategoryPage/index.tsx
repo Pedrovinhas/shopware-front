@@ -112,12 +112,14 @@ export function CategoryPage() {
         
  
          <div className="mobile__categories">
-             <AppBar>
-                 <ChevronLeftIcon isFilled cursor='pointer' onClick={() => navigate('/')}/>
-                 <Heading size='small' color='primary' title='regular'>
-                 {categoryId}
-                 </Heading>
-             </AppBar>
+             <div className="margin__container">
+                 <AppBar>
+                     <ChevronLeftIcon isFilled cursor='pointer' onClick={() => navigate('/')}/>
+                     <Heading size='small' color='primary' title='regular'>
+                     {filteredCategory === undefined ? 'All' : filteredCategory[0].name}
+                     </Heading>
+                 </AppBar>
+             </div>
  
              <ProductColumns/>
              <ProductFilter/>

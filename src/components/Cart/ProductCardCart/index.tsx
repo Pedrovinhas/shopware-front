@@ -5,24 +5,41 @@ import LeatherCoachBag from '../../../assets/Product/leather-coach-bag.png'
 import { useCart } from "../../../hooks/useCart";
 
 export function ProductCardCart() {
-    const { cartItems } = useCart();
+    const { cartItems, removeCartItem } = useCart();
+    const imageURL = 'http://localhost:3003/uploads/'
     const cartQuantity = cartItems.length
     return (
         <CartContainer>
 
             <div className="cart__products">
-            <CartProduct  
-                productModel="Coach" 
-                productName="Leather Coach Bag"
-                productQuantity="1"
-                src={LeatherCoachBag}
-                withButton={false}
-                withPrice={false}
-                withStepper={false}
-            />
-            <CartDetails
-                productValue="54.56"
-            />
+       
+            {
+                  cartItems.map(cartItem => (
+
+                    <>
+                        <CartProduct 
+                        key={cartItem._id}
+                        src={imageURL + cartItem.imagePath == imageURL ?  cartItem.imageUrl : imageURL + cartItem.imagePath } 
+                        withButton={false} 
+                        productModel={cartItem.model}
+                        productName={cartItem.name}
+                        productValue={cartItem.price}
+                        
+                        
+                        withQuantity={false} 
+                        withPrice={false} 
+                        withStepper={false} 
+                        /> 
+                        <CartDetails
+                            productValue={(cartItem.price)}
+                            onClick={() => removeCartItem(cartItem._id!)}
+                        />
+                    </>
+                    ))
+                    }
+           
+                  
+                    
             </div>
             
         </CartContainer>

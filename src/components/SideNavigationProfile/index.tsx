@@ -32,13 +32,13 @@ export function SideNavigationProfile({ defaultValue, label, children }: Navigat
                 </div>
             </ToggleGroup.Item>
 
-            <ToggleGroup.Item value='Refer and Earn' onClick={() => navigate('*')} className='toggle-group__item'>
+            <ToggleGroup.Item value='Refer and Earn' onClick={() => navigate('/user-profile/refer')} className='toggle-group__item'>
                 
                     <span className="border">
                     
                     </span>
                 <div className="item__text">
-                    <Text color='dark' title='medium' size='large'>
+                    <Text color='dark' title='medium' size='large' >
                         Refer and Earn
                     </Text>
                
@@ -60,7 +60,7 @@ export function SideNavigationProfile({ defaultValue, label, children }: Navigat
                 </div>
             </ToggleGroup.Item>
 
-            <ToggleGroup.Item value='My Wishlist' onClick={() => navigate('/')} className='toggle-group__item'>
+            <ToggleGroup.Item value='My Wishlist' onClick={() => navigate('/user-profile/wishlist')} className='toggle-group__item'>
                 
                     <span className="border">
                     
@@ -74,7 +74,7 @@ export function SideNavigationProfile({ defaultValue, label, children }: Navigat
                 </div>
             </ToggleGroup.Item>
 
-            <ToggleGroup.Item value='My Reviews' onClick={() => navigate('/')} className='toggle-group__item'>
+            <ToggleGroup.Item value='My Reviews' onClick={() => navigate('/user-profile/reviews')} className='toggle-group__item'>
                 
                     <span className="border">
                     
@@ -88,7 +88,7 @@ export function SideNavigationProfile({ defaultValue, label, children }: Navigat
                 </div>
             </ToggleGroup.Item>
 
-            <ToggleGroup.Item value='My Address Book' onClick={() => navigate('/')} className='toggle-group__item'>
+            <ToggleGroup.Item value='My Address Book' onClick={() => navigate('/user-profile/address-book')} className='toggle-group__item'>
                 
                     <span className="border">
                     

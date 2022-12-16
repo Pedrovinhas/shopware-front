@@ -10,9 +10,12 @@ import { Heading } from "../../components/Heading";
 import { ChevronRightSmallIcon } from "../../components/Icons/Chevron/ChevronRightSmallIcon";
 import { TableHeading } from "../../components/TableHeading";
 import { Text } from "../../components/Text";
-import { CartContent, CartLeftSection, CartRightSection, CartSection, MarginContainer } from "./styles";
+import { useCart } from "../../hooks/useCart";
+import ProductAlert from '../../assets/Alerts/alert-product.png'
+import { CartContent, CartLeftSection, CartRightSection, CartSection, EmptyCartPage, MarginContainer } from "./styles";
 
 export function CartPage() {
+    const { cartItems } = useCart()
     const navigate = useNavigate()
     return (
         <>
@@ -27,17 +30,26 @@ export function CartPage() {
                 <Text color="lowEmphasis" size="medium" title="medium">
                     My Cart           
                 </Text>
-         </Breadcrumbs>
 
-        <CartSection>
-        <Heading color="primary" size="medium" title="bold" >
-            My Cart { /* Vou ter que passar isso por props, mas não sei como */}
+         </Breadcrumbs>
+         <Heading color="primary" size="medium" title="bold" >
+            My Cart 
         </Heading>
+        {
+           cartItems.length === 0 ? (
+            <EmptyCartPage>
+            <img src={ProductAlert} alt="Empty Cart" />
+            <Heading title='bold' size='large' color='dark'> Uh Oh....! </Heading>
+            <Text size='medium' color='dark' title='regular'> You haven’t added any any items. Start shopping to make your bag bloom </Text> 
+            </EmptyCartPage>
+                    ) : (
+                       
+        <CartSection>
+        
 
         <CartContent>
         <CartLeftSection>
             <TableHeading/>
-            <ProductCardCart/>
             <ProductCardCart/>
         </CartLeftSection>
 
@@ -47,14 +59,15 @@ export function CartPage() {
             withOrderCart={false}
             withOrderButtonsCart={false}
             withOrderHeaderDetails={false}
+
+            discount={3.50}
             />
         </CartRightSection>
+       
            
         </CartContent>
     
        
-        </CartSection>
-
         <Accordian 
             size='big' 
             text='Apply Coupon Code' 
@@ -64,6 +77,10 @@ export function CartPage() {
         >
             <TextField hasActionButton={true} actionLabel='CHECK' size="big" text="Apply Coupon Code"/>
         </Accordian>
+        </CartSection>
+        )}
+         
+
          </MarginContainer>
         
 

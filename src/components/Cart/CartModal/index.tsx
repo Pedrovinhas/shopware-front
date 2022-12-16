@@ -5,12 +5,12 @@ import { ArrowRightIcon } from '../../Icons/ArrowIcon/ArrowRightIcon';
 import { HandbagsIconUnfilled } from '../../Icons/HandbagsIconUnfilled';
 import { CartProduct } from '../CartProduct';
 import { CloseButton, Content, EmptyCart, Overlay } from './styles';
-import LeatherCoachBag from '../../../assets/Product/leather-coach-bag.png'
 import { Separator } from '../../Separator';
 import { OrderSummary } from '../OrderSummary';
 import { useCart } from '../../../hooks/useCart';
 import { Text } from '../../Text';
 import ProductAlert from '../../../assets/Alerts/alert-product.png'
+import { ArrowLeftCorrectIcon } from '../../Icons/ArrowIcon/ArrowRightCorrectIcon';
 
 export function ModalCart() {
     const imageURL = 'http://localhost:3003/uploads/'
@@ -35,7 +35,7 @@ export function ModalCart() {
 
             <CloseButton>
             <AppBar>
-                <ArrowRightIcon isFilled />
+                <ArrowLeftCorrectIcon isFilled/>
                 <Heading size='small' color='primary' title='regular'>
                     Back
                 </Heading>
@@ -78,6 +78,8 @@ export function ModalCart() {
                     withOrderHeaderDetails={false}
                     withCartProduct={false}
 
+                    tax={2.95}
+                    discount={3.4}
                     cartSubtotal={cartTotal}
                 />
                     </div>

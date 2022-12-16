@@ -8,7 +8,7 @@ export function PrivateRoutes() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        if(!authenticated) navigate('/')
+        if(!authenticated) navigate('/signup')
     })
 
     return authenticated ? (

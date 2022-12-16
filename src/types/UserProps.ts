@@ -4,5 +4,5 @@ export interface IUser {
     email?: string;
     wishlist?: string[];
     cart?: string[]
-    address?: string[]
+    address?: [{city?: string, state?: string, pinCode?: string, street?: string }] | any;
 }

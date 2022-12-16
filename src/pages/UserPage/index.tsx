@@ -16,7 +16,7 @@ import { useAuth } from "../../hooks/useAuth";
 import { Container, ContainerResponsive, HeadingContainer, MobileSection, UserSection } from "./styles";
 
 export function UserPage() {
-    const { handleLogout } = useAuth()
+    const { handleLogout, user } = useAuth()
 
     const navigate = useNavigate()
     return (
@@ -30,7 +30,7 @@ export function UserPage() {
                 </Text>
                 <ChevronRightSmallIcon isFilled/>
                 <Text color="lowEmphasis" size="medium" title="medium">
-                    User Profile        
+                   {user?.name}
                 </Text>
             </Breadcrumbs>
             <HeadingContainer>
@@ -60,7 +60,7 @@ export function UserPage() {
             </AppBar>
             <UserAvatar/>
             <div className="side-navigation">
-            <SideNavigationProfile defaultValue="Profile"/>
+            <SideNavigationProfile defaultValue=""/>
             <Button size="large" variant="outline" onClick={handleLogout} >
                     Logout
             </Button>

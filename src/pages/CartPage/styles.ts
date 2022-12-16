@@ -9,6 +9,14 @@ export const MarginContainer = styled.div`
     gap: 28px;
 `
 
+export const EmptyCartPage = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+`
+
 export const CartSection = styled.section`
     display: flex;
     flex-direction: column;

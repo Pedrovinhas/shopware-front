@@ -187,7 +187,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
             Get upto 100 reward points for every friend you invite
             </Text>
             <Button className='invite__btn'  size="small" variant="secondary" >
-                <Text color="primary" size="medium" title='regular'> 
+                <Text color="primary" size="medium" title='regular' onClick={() => navigate('/user-profile/refer')} > 
                 Invite now
                 </Text>
                 <ArrowRightIcon isFilled/>
@@ -210,19 +210,19 @@ export function ProductInfo({ product }: ProductInfoProps) {
             >
 
             <SwiperSlide>
-            <ProductCard onClick={() => navigate('/product')} src={PinkBag} withRating={false} withButton={false} withDiscount={false} withTrending={true} withWishlistIcon={false}/>
+            <ProductCard onClick={() => navigate('/product')} productModel='Grande' productName="Blossom Pouch" productValue="53.90" src={PinkBag} withRating={false} withButton={false} withDiscount={false} withTrending={true} withWishlistIcon={false}/>
             </SwiperSlide>
             
             <SwiperSlide>
-            <ProductCard onClick={() => navigate('/product')} src={PinkBag} withRating={false} withButton={false} withDiscount={false} withTrending={true} withWishlistIcon={false}/>
+            <ProductCard onClick={() => navigate('/product')} productModel='Grande' productName="Blossom Pouch" productValue="53.90" src={PinkBag} withRating={false} withButton={false} withDiscount={false} withTrending={true} withWishlistIcon={false}/>
             </SwiperSlide>
 
             <SwiperSlide>
-            <ProductCard onClick={() => navigate('/product')} src={PinkBag} withRating={false} withButton={false} withDiscount={false} withTrending={true} withWishlistIcon={false}/>
+            <ProductCard onClick={() => navigate('/product')} productModel='Grande' productName="Blossom Pouch" productValue="53.90" src={PinkBag} withRating={false} withButton={false} withDiscount={false} withTrending={true} withWishlistIcon={false}/>
             </SwiperSlide>
 
             <SwiperSlide>
-            <ProductCard onClick={() => navigate('/product')} src={PinkBag} withRating={false} withButton={false} withDiscount={false} withTrending={true} withWishlistIcon={false}/>
+            <ProductCard onClick={() => navigate('/product')} productModel='Grande' productName="Blossom Pouch" productValue="53.90" src={PinkBag} withRating={false} withButton={false} withDiscount={false} withTrending={true} withWishlistIcon={false}/>
             </SwiperSlide>
            
           

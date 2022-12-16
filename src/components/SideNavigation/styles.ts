@@ -4,6 +4,11 @@ import  styled  from 'styled-components';
 
 export const StyledTrigger = styled(Accordion.AccordionTrigger)`
 
+    @media (max-width: 1140px) {
+        display: none;
+        margin-left: 16px;
+    }
+
     width: 17.875rem;
     height: 2rem;
     display: flex;

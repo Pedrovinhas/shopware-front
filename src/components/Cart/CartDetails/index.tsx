@@ -1,12 +1,14 @@
 import { Text } from "../../Text"
 import { ProductProps } from "../../../types/ProductProps"
 import { DetailsButton, DetailsContainer } from "./styles"
+import { useCart } from "../../../hooks/useCart";
 
 export interface CartDetailsProps extends ProductProps, DetailsButtonProps {   
 }
 
 export interface DetailsButtonProps {
     withDetailsButton?: boolean;
+    onClick?: () => void;
 }
 
 export function CartDetails(props: CartDetailsProps) {
@@ -22,7 +24,7 @@ export function CartDetails(props: CartDetailsProps) {
             </Text>
             
             <Text color='highEmphasis' size='medium' title='medium'>
-                    {props.productValue} 
+                    ${props.productValue} 
             </Text>
         </div>
           
@@ -32,7 +34,7 @@ export function CartDetails(props: CartDetailsProps) {
                 Move to Wishlist
             </Text>
 
-            <Text as='a' cursor="pointer" color='error' size='medium' title='regular' decoration="underline"> 
+            <Text as='a' cursor="pointer" color='error' size='medium' title='regular' decoration="underline" onClick={props.onClick}> 
                 Remove
             </Text>
           </DetailsButton>

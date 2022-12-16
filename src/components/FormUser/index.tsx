@@ -26,8 +26,6 @@ export function FormUser() {
                 <div className="label__text">
                     <Text as='label' size='large' color='highEmphasis' title='medium'>
                         First Name
-                        {user?.name} 
-                        
                     </Text>
                     <TextField text="John" size="medium"  />
                 </div>

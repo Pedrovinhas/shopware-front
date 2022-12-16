@@ -74,9 +74,13 @@ export function AuthContextProvider({children}: UserContextProviderProps) {
             phone,
             otp
         })
-     
+        
 
-        localStorage.setItem('user', JSON.stringify(data.userWithoutPassword))
+        const payload = data.userWithoutPassword
+
+        setUser(payload)
+        
+        setUserLocalStorage(payload)
         localStorage.setItem('token', JSON.stringify(data.token));
         api.defaults.headers.common["Authorization"] = `Bearer ${data.token}`
         setAuthenticated(true)

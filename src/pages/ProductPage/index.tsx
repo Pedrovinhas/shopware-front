@@ -50,7 +50,7 @@ export function ProductPage() {
                     <ChevronRightSmallIcon isFilled/>
                     <Text color="primary" size="medium" title="medium"
                         onClick={
-                            () => navigate(`/category/${categoryId}`)
+                            () => navigate(`/category/${categoryId}/products`)
                     }>
                        {product?.category?.name}
                     </Text>
@@ -86,9 +86,10 @@ export function ProductPage() {
 
         <ProductPageMobile>
                 <AppBar>
-                    <ChevronLeftIcon isFilled/>
+                    <ChevronLeftIcon isFilled onClick={
+                            () => navigate(`/category/${categoryId}`)}/>
                 </AppBar>
-                <ProductPics productBigImage={CoachBigPhoto}/>
+                <ProductPics productBigImage={imageURL + product?.imagePath == imageURL ?  product?.imageUrl : imageURL + product?.imagePath}/>
                 <ProductInfo 
                         product={product!}
                         // model={product?.model} 

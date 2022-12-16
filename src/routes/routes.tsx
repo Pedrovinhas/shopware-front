@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthContextProvider } from "../contexts/AuthContext";
 import { AboutPage } from "../pages/AboutPage";
+import { AdressBookPage } from "../pages/AdressBookPage";
 import { CartPage } from "../pages/CartPage";
 import { CategoryPage } from "../pages/CategoryPage";
 import { CheckoutPage } from "../pages/CheckoutPage";
@@ -11,6 +12,8 @@ import { OrdersPage } from "../pages/OrdersPage";
 import { PageNotFound } from "../pages/PageNotFound";
 import { ProductPage } from "../pages/ProductPage";
 import { ProductsPage } from "../pages/ProductsPage";
+import { ReferAndEarnPage } from "../pages/ReferAndEarnPage";
+import { ReviewPage } from "../pages/ReviewPage";
 import { SignUpOtpPage } from "../pages/SignUpOtpPage";
 import { SignUpPage } from "../pages/SignUpPage";
 import { SignUpPhonePage } from "../pages/SignUpPhonePage";
@@ -42,6 +45,9 @@ export function Router() {
                 <Route element={<PrivateRoutes/>}>
                     <Route path='/user-profile' element={<UserPage />}/>
                     <Route path='/user-profile/wishlist' element={<WishlistPage />}/>
+                    <Route path='/user-profile/reviews' element={<ReviewPage />}/>
+                    <Route path='/user-profile/address-book' element={<AdressBookPage />}/>
+                    <Route path='/user-profile/refer' element={<ReferAndEarnPage />}/>
                     <Route path='/user-profile/my-orders' element={<OrdersPage />}/>
                     {/* <Route path='/user-profile/my-orders/:orderId' element={<OrderDetailPage/>}/> */}
                     <Route path='/user-profile/my-orders/orderId' element={<OrderDetailPage/>}/>

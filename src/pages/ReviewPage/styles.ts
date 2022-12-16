@@ -84,6 +84,8 @@ export const WishContainer = styled.div`
 
     width: 100%;
 
+    height: 500px;
+
     .heading__text {
         display: block;
         @media (min-width: 740px) {
@@ -118,8 +120,6 @@ export const WishContainer = styled.div`
 
         @media (min-width: 740px) {
             margin-top: 0;
-
-            margin-top: -20px;
         }
         
         .inf__content {

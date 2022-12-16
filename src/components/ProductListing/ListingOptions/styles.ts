@@ -8,6 +8,11 @@ export const ListingContainer = styled.div`
     
     height: 3.5rem;
     width: 57.25rem;
+
+    @media (max-width: 1140px) {
+        display: none;
+        margin-left: 16px;
+    }
 `
 
 export const PageLayout = styled.div`

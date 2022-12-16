@@ -1,5 +1,5 @@
 import { ProductCard } from "../../HorizontalCards/ProductCard";
-import { Container, EmptyProducts, GridContainer } from "./styles";
+import { Container, EmptyProducts, GridContainer, TabLink, TabsContainer, ToggleGroupItem, ToggleGroupRoot } from "./styles";
 import { useNavigate, useParams } from "react-router-dom";
 import { Product } from "../../../types/Product";
 import { useEffect, useState } from "react";
@@ -7,12 +7,9 @@ import { api } from "../../../services/api";
 import { Text } from "../../Text";
 import ProductsEmptyImage from "../../../assets/404.png"
 import { Heading } from "../../Heading";
-import { ToggleGroupItem } from "@radix-ui/react-toggle-group";
-import { TabLink, TabsContainer } from "../../Tabs/styles";
-import { ToggleGroupRoot } from "../ListingOptions/styles";
 import { SideNavigation } from "../../SideNavigation";
 import { ListingOptions } from "../ListingOptions";
-import { Tabs } from "../../Tabs";
+
 
 // const productsMock: Product[] = [{}]
 

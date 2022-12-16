@@ -42,9 +42,11 @@ export interface OrderHeaderDetailsProps {
 interface ICartItemsProps {
     ICartItem?: Product | undefined;
     cartSubtotal?: number ;
+    tax?: number;
+    discount: number
 }
 
-export function OrderSummary({ cartSubtotal, ICartItem, withOrderHeaderDetails, withHeader,withCartProduct, withOrderPageText, withOrderCart, withOrderButtonsCart, withOrderPageButtons }: OrderSummaryProps) {
+export function OrderSummary({ cartSubtotal, tax, ICartItem, discount, withOrderHeaderDetails, withHeader,withCartProduct, withOrderPageText, withOrderCart, withOrderButtonsCart, withOrderPageButtons }: OrderSummaryProps) {
     const { cartTotal, cartItems } = useCart();
     
     const navigate = useNavigate()
@@ -65,7 +67,7 @@ export function OrderSummary({ cartSubtotal, ICartItem, withOrderHeaderDetails, 
                 <OrderCartProduct withCartProduct={withCartProduct}>
                 {
                     cartItems.length === 0 ? (
-                        <h1> Não há nada aqui </h1>
+                        <h1> The Order is Empty </h1>
                     ) : (
                         <>
                         {
@@ -128,16 +130,16 @@ export function OrderSummary({ cartSubtotal, ICartItem, withOrderHeaderDetails, 
                 </OrderText>
                 <OrderValue>
                 <Text color='highEmphasis' size='large' title='regular'>
-                        {cartTotal}
-                    </Text>
-                    <Text color='highEmphasis' size='large' title='regular'>
-                    -$13.40
+                        ${cartTotal}
                     </Text>
                     <Text color='highEmphasis' size='large' title='regular'>
                     -$0.00
                     </Text>
                     <Text color='highEmphasis' size='large' title='regular'>
-                    $106.29
+                    -$0.00
+                    </Text>
+                    <Text color='highEmphasis' size='large' title='regular'>
+                    ${cartTotal}
                     </Text>
                 </OrderValue>
                 </Order>
@@ -156,13 +158,13 @@ export function OrderSummary({ cartSubtotal, ICartItem, withOrderHeaderDetails, 
                 </OrderText>
                 <OrderValue>
                 <Text color='highEmphasis' size='medium' title='normal'>
-                      {cartSubtotal}
+                    ${cartSubtotal}
                     </Text>
                     <Text color='highEmphasis' size='medium' title='normal'>
-                    $2.00
+                    ${tax}
                     </Text>
                     <Text color='highEmphasis' size='medium' title='regular'>
-                    {cartSubtotal}
+                    ${(cartSubtotal! + tax!).toFixed(2)}
                     </Text>
                 </OrderValue>
                 </OrderCart>
@@ -178,7 +180,7 @@ export function OrderSummary({ cartSubtotal, ICartItem, withOrderHeaderDetails, 
             
             <OrderButtonsCart withOrderButtonsCart={withOrderButtonsCart}>
             <TextField hasActionButton={true} actionLabel='CHECK' size="intermediary" text="Apply Coupon Code"/>
-            <Button variant="primary" size="large" onClick={() => navigate('/checkout')}>
+            <Button variant="primary" size="large" onClick={() => navigate('/cart')}>
                     Place Order
                 </Button>
                 <Text decoration="underline" color="primary" size="medium" title="regular" cursor="pointer" onClick={

@@ -63,7 +63,7 @@ export function CartProduct({onClick, withStepper, withQuantity, productModel, p
 
                     <DivPrice withPrice={withPrice}>
                     <Text size='large' color="highEmphasis" title="medium">
-                        {productValue}
+                        ${productValue}
                     </Text>
                     </DivPrice>
 
@@ -83,7 +83,7 @@ export function CartProduct({onClick, withStepper, withQuantity, productModel, p
                 <StepperContainer withStepper={withStepper}>
                     <Stepper/>
                     <Text size='large' color="highEmphasis" title="medium">
-                        {productValue}
+                        ${productValue}
                     </Text>
                 </StepperContainer>
             </CardContent>
