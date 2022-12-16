@@ -9,9 +9,9 @@
   <a href="#-Como-rodar-a-aplicação">  Como rodar  </a>&nbsp;&nbsp;
 </p>
 
-<div align='center'>
-    
-</div>
+<h1 align='center'>
+    <img src='./.github/shopware.png'/>
+</h1>
 
 
 
