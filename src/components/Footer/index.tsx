@@ -27,7 +27,7 @@ export function Footer(props : FooterProps) {
 
 
             <div className='footer_mobile'>
-                <Accordian text='More about Coral' withSeparator={false} withPadding={true}>
+                <Accordian type='multiple'   text='More about Coral' withSeparator={false} withPadding={true}>
                     <LeftFooter>
                         <ShopByCategoryNav/>
                         <div className="row-reverse">

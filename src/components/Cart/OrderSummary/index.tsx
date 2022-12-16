@@ -43,7 +43,7 @@ interface ICartItemsProps {
     ICartItem?: Product | undefined;
     cartSubtotal?: number ;
     tax?: number;
-    discount: number
+    discount?: number
 }
 
 export function OrderSummary({ cartSubtotal, tax, ICartItem, discount, withOrderHeaderDetails, withHeader,withCartProduct, withOrderPageText, withOrderCart, withOrderButtonsCart, withOrderPageButtons }: OrderSummaryProps) {

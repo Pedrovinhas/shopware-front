@@ -100,6 +100,8 @@ export function CheckoutPage() {
             withOrderButtonsCart={false}
             withCartProduct={true}
             withOrderHeaderDetails={true}
+
+         
             />
         </CheckOutRightSection>
            
