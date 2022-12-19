@@ -19,13 +19,13 @@
 
 **Shopware Coral** é uma aplicação ecommerce com documentação usando Storybook e também o desafio final do projeto de bolsas da Compass.uol. 
 
-### Deploy
-- O Deploy da aplicação foi feito pela Vercel, e pode ser consultado através desse [link](https://shopware-front-3pxz.vercel.app/). O Back-End não foi feito o deploy ainda, então alguns componentes que necessitam da API estarão em branco.
+### 🎉 Deploy
+O Deploy da aplicação foi feito na Vercel, e pode ser consultado através desse [link](https://shopware-front-3pxz.vercel.app/). O Back-End não foi feito o deploy ainda, então alguns componentes que necessitam da API estarão em branco.
 
-### ✒ **Layout**
-- Para mais informações sobre o Layout acesse o Storybook da aplicação.
+## ✒ **Layout**
+Todos os créditos do Layout são dados para o [Webkul Design](https://www.figma.com/@webkuldesign). Para mais informações sobre o Layout acesse o Storybook da aplicação.
 
-[![Figma](https://img.shields.io/badge/acessar%20layout%20no%20figma-222222?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/file/DqSemG9Z09LG9cAf8L8nUm/keepalive)
+[![Figma](https://img.shields.io/badge/acessar%20layout%20no%20figma-222222?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/community/file/1154649549752855805)
 
 ## ⚙ Tecnologias
 
